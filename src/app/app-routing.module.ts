@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './containers';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {MyprofileComponent} from "./myprofile/myprofile.component";
+import {ProfilespageComponent} from "./profilespage/profilespage.component";
 
 const routes: Routes = [
   {
@@ -33,6 +35,22 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
+  {
+    path:'myprofile',
+    component:MyprofileComponent,
+    data: {
+      title: 'myprofile Page'
+    },
+  },
+  {
+    path:'profiles',
+    component:ProfilespageComponent,
+    data: {
+      title: 'profilespage Page'
+    },
+  },
+
+
 
   {path: '**', redirectTo: 'dashboard'}
 ];

@@ -86,7 +86,7 @@ export const navItems: INavData[] = [
   },
   {
     name: "Gestion de l'ingénierie",
-    url: 'gestion',
+    url: '/gestion',
     iconComponent: { name: 'cilChartLine' },
   },
 ];

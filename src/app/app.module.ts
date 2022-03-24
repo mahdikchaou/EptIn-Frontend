@@ -48,6 +48,10 @@ import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { ProfilespageComponent } from './profilespage/profilespage.component';
+
+
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -61,7 +65,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent, ProfilespageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
