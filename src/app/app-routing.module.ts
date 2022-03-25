@@ -6,6 +6,12 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {MyprofileComponent} from "./myprofile/myprofile.component";
 import {ProfilespageComponent} from "./profilespage/profilespage.component";
+import {ExperienceComponent} from "./experience/experience.component";
+import {CompetencesComponent} from "./competences/competences.component";
+import {CreeComponent} from "./cree/cree.component";
+import {CreerComponent} from "./creer/creer.component";
+import {EducationComponent} from "./education/education.component";
+import {PostuleComponent} from "./postule/postule.component";
 
 const routes: Routes = [
   {
@@ -36,10 +42,52 @@ const routes: Routes = [
     }
   },
   {
-    path:'myprofile',
+    path:'informations_generales',
     component:MyprofileComponent,
     data: {
       title: 'myprofile Page'
+    },
+  },
+  {
+    path:'experience',
+    component:ExperienceComponent,
+    data: {
+      title: 'experience Page'
+    },
+  },
+  {
+    path:'competences',
+    component:CompetencesComponent,
+    data: {
+      title: 'competences Page'
+    },
+  },
+  {
+    path:'offres_crees',
+    component:CreeComponent,
+    data: {
+      title: 'Cree Page'
+    },
+  },
+  {
+    path:'creer_offre',
+    component:CreerComponent,
+    data: {
+      title: 'Creer Page'
+    },
+  },
+  {
+    path:'education',
+    component:EducationComponent,
+    data: {
+      title: 'education Page'
+    },
+  },
+  {
+    path:'postules',
+    component:PostuleComponent,
+    data: {
+      title: 'postules Page'
     },
   },
   {

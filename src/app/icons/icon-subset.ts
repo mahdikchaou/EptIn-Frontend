@@ -1,4 +1,5 @@
 import {
+  cilLibraryAdd,
   cibCcAmex,
   cibCcApplePay,
   cibCcMastercard,
@@ -102,6 +103,7 @@ import {
 } from '@coreui/icons';
 
 export const iconSubset = {
+  cilLibraryAdd,
   cilRss,
   cilBolt,
   cilFire,
@@ -205,6 +207,7 @@ export const iconSubset = {
 };
 
 export enum IconSubset {
+  cilLibraryAdd='cilLibraryAdd',
   cilRss='cilRss',
   cilBolt='cilBolt',
   cilFire='cilFire',

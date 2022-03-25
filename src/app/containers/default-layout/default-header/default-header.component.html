@@ -1,6 +1,7 @@
 <!--<c-header class="mb-4 d-print-none" position="sticky">-->
+
 <ng-container>
-  <c-container [fluid]="true" style="padding-left: 3rem; padding-top: 0.5rem">
+  <c-container [fluid]="true" style="padding-left: 3rem; padding-top: 0.5rem " >
     <button
       toggle="visible"
       cHeaderToggler
@@ -40,9 +41,9 @@
 
 <!--</c-header>-->
 <ng-template #userDropdown>
-  <c-container [fluid]="true">
+  <c-container [fluid]="true" >
     <c-nav-item>
-      <a cNavLink routerLink="/dashboard" routerLinkActive="active" style="color: black">
+      <a cNavLink routerLink="/dashboard" routerLinkActive="active" style="color: black" (click)="gotomyprofile()">
         First/Last name
       </a>
     </c-nav-item>
@@ -66,29 +67,17 @@
     </button>
     <ul cDropdownMenu class="pt-0 pr-5 w-auto">
       <li>
-        <h6 cDropdownHeader class="bg-light fw-semibold py-2">Account</h6>
-      </li>
-      <li>
-        <a routerLink="./" cDropdownItem>
-          <svg cIcon class="me-2" name="cilEnvelopeOpen"></svg>
-          Messages
-          <c-badge class="ms-2 float-end" color="success">
-            42
-          </c-badge>
-        </a>
-      </li>
-      <li>
         <h6 cDropdownHeader class="bg-light fw-semibold py-2">Settings</h6>
       </li>
       <li></li>
       <li>
-        <a routerLink="./" cDropdownItem>
+        <a routerLink="./" cDropdownItem  (click)="gotomyprofile()">
           <svg cIcon class="me-2" name="cilUser"></svg>
           Profile
         </a>
       </li>
       <li>
-        <a routerLink="./" cDropdownItem>
+        <a routerLink="./" cDropdownItem  (click)="gotomyprofile()">
           <svg cIcon class="me-2" name="cilSettings"></svg>
           Settings
         </a>

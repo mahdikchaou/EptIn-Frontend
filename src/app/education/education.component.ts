@@ -1,21 +1,18 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 
-
-
 @Component({
-  selector: 'app-myprofile',
-  templateUrl: './myprofile.component.html',
-  styleUrls: ['./myprofile.component.scss']
+  selector: 'app-education',
+  templateUrl: './education.component.html',
+  styleUrls: ['./education.component.scss']
 })
+export class EducationComponent{
 
 
-export class MyprofileComponent {
 
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-
   constructor(private router:Router) {}
   gotomyprofile(){
     this.router.navigate(['informations_generales'])
@@ -38,6 +35,5 @@ export class MyprofileComponent {
   gotoexperience(){
     this.router.navigate(['experience'])
   }
-
 
 }
