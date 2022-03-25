@@ -52,7 +52,7 @@ import { ProfilespageComponent } from './profilespage/profilespage.component';
 import { EducationComponent } from './education/education.component';
 import { CompetencesComponent } from './competences/competences.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { PostuleComponent } from './postule/postule.component';
+import {AppliedComponent} from './applied/applied.component'
 import { CreeComponent } from './cree/cree.component';
 import { CreerComponent } from './creer/creer.component';
 
@@ -72,7 +72,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent, ProfilespageComponent, EducationComponent, CompetencesComponent, ExperienceComponent, PostuleComponent, CreeComponent, CreerComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent, ProfilespageComponent, EducationComponent, CompetencesComponent, ExperienceComponent, AppliedComponent, CreeComponent, CreerComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -28,7 +28,7 @@ export class CompetencesComponent{
     this.router.navigate(['education'])
   };
   gotopostule(){
-    this.router.navigate(['postules'])
+    this.router.navigate(['applied'])
   };
   gotoexperience(){
     this.router.navigate(['experience'])

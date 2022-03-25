@@ -11,7 +11,7 @@ import {CompetencesComponent} from "./competences/competences.component";
 import {CreeComponent} from "./cree/cree.component";
 import {CreerComponent} from "./creer/creer.component";
 import {EducationComponent} from "./education/education.component";
-import {PostuleComponent} from "./postule/postule.component";
+import {AppliedComponent} from "./applied/applied.component";
 
 const routes: Routes = [
   {
@@ -84,10 +84,10 @@ const routes: Routes = [
     },
   },
   {
-    path:'postules',
-    component:PostuleComponent,
+    path:'applied',
+    component:AppliedComponent,
     data: {
-      title: 'postules Page'
+      title: 'applied Page'
     },
   },
   {

@@ -3,10 +3,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-postule',
-  templateUrl: './postule.component.html',
-  styleUrls: ['./postule.component.scss']
+  templateUrl: './applied.component.html',
+  styleUrls: ['./applied.component.scss']
 })
-export class PostuleComponent{
+export class AppliedComponent{
 
   public perfectScrollbarConfig = {
     suppressScrollX: true,
@@ -28,7 +28,7 @@ export class PostuleComponent{
     this.router.navigate(['education'])
   };
   gotopostule(){
-    this.router.navigate(['postules'])
+    this.router.navigate(['applied'])
   };
   gotoexperience(){
     this.router.navigate(['experience'])
