@@ -1,4 +1,4 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import {Component, Input, NgModule, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 
 
@@ -12,31 +12,32 @@ import {Router} from "@angular/router";
 
 export class MyprofileComponent {
 
+
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
 
   constructor(private router:Router) {}
   gotomyprofile(){
-    this.router.navigate(['informations_generales'])
+    this.router.navigate(['myprofile/informations_generales'])
   };
   gotocompetences(){
-    this.router.navigate(['competences'])
+    this.router.navigate(['myprofile/competences'])
   };
   gotocree(){
-    this.router.navigate(['offres_crees'])
+    this.router.navigate(['myprofile/offres_crees'])
   };
   gotocreer(){
-    this.router.navigate(['creer_offre'])
+    this.router.navigate(['myprofile/creer_offre'])
   };
   gotoeducation(){
-    this.router.navigate(['education'])
+    this.router.navigate(['myprofile/education'])
   };
   gotopostule(){
-    this.router.navigate(['applied'])
+    this.router.navigate(['myprofile/applied'])
   };
   gotoexperience(){
-    this.router.navigate(['experience'])
+    this.router.navigate(['myprofile/experience'])
   }
 
 

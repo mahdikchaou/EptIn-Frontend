@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-competences',
-  templateUrl: './competences.component.html',
-  styleUrls: ['./competences.component.scss']
+  selector: 'app-informations-generales',
+  templateUrl: './informations-generales.component.html',
+  styleUrls: ['./informations-generales.component.scss']
 })
-export class CompetencesComponent{
+export class InformationsGeneralesComponent{
 
   public perfectScrollbarConfig = {
     suppressScrollX: true,

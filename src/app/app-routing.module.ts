@@ -12,95 +12,92 @@ import {CreeComponent} from "./cree/cree.component";
 import {CreerComponent} from "./creer/creer.component";
 import {EducationComponent} from "./education/education.component";
 import {AppliedComponent} from "./applied/applied.component";
+import {OffresComponent} from "./offres/offres.component";
+import {InformationsGeneralesComponent} from "./informations-generales/informations-generales.component";
+import {stringify} from "@angular/compiler/src/util";
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    redirectTo: 'dashboard',
+    path: '',
+    redirectTo: 'offres',
     pathMatch: 'full'
   },
   {
     path: '',
     component: DefaultLayoutComponent,
-    data: {
-      title: 'Home'
-    },
-    children: []
+    children: [
+      {
+        path:'profiles',
+        component:ProfilespageComponent,
+      },
+      {
+        path:'offres',
+        component:OffresComponent,
+      },
+    ]
   },
   {
     path:'login',
     component:LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
   },
   {
     path:'register',
     component:RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
   },
   {
-    path:'informations_generales',
+    path:'myprofile',
+    redirectTo:'myprofile/informations_generales',
+  },
+  {
+    path:'myprofile',
     component:MyprofileComponent,
-    data: {
-      title: 'myprofile Page'
-    },
-  },
-  {
-    path:'experience',
-    component:ExperienceComponent,
-    data: {
-      title: 'experience Page'
-    },
-  },
-  {
-    path:'competences',
-    component:CompetencesComponent,
-    data: {
-      title: 'competences Page'
-    },
-  },
-  {
-    path:'offres_crees',
-    component:CreeComponent,
-    data: {
-      title: 'Cree Page'
-    },
-  },
-  {
-    path:'creer_offre',
-    component:CreerComponent,
-    data: {
-      title: 'Creer Page'
-    },
-  },
-  {
-    path:'education',
-    component:EducationComponent,
-    data: {
-      title: 'education Page'
-    },
-  },
-  {
-    path:'applied',
-    component:AppliedComponent,
-    data: {
-      title: 'applied Page'
-    },
-  },
-  {
-    path:'profiles',
-    component:ProfilespageComponent,
-    data: {
-      title: 'profilespage Page'
-    },
+    children: [
+      {
+        path:'informations_generales',
+        component:InformationsGeneralesComponent,
+      },
+      {
+        path:'experience',
+        component:ExperienceComponent,
+      },
+      {
+        path:'competences',
+        component:CompetencesComponent,
+      },
+      {
+        path:'offres_crees',
+        component:CreeComponent,
+        data: {
+          title: 'Cree Page'
+        },
+      },
+      {
+        path:'creer_offre',
+        component:CreerComponent,
+        data: {
+          title: 'Creer Page'
+        },
+      },
+      {
+        path:'education',
+        component:EducationComponent,
+        data: {
+          title: 'education Page'
+        },
+      },
+      {
+        path:'applied',
+        component:AppliedComponent,
+        data: {
+          title: 'applied Page'
+        },
+      },
+
+    ],
   },
 
 
-
-  {path: '**', redirectTo: 'dashboard'}
+  {path: '**', redirectTo: 'offres'}
 ];
 
 @NgModule({

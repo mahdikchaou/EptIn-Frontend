@@ -2,6 +2,10 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
+    title: true,
+    name: 'SysCo'
+  },
+  {
     name: 'Branches',
     url: '/branches',
     iconComponent: { name: 'cilSitemap' },
@@ -9,6 +13,10 @@ export const navItems: INavData[] = [
       color: '',
       text: 'NEW'
     }*/
+  },
+  {
+    title: true,
+    name: 'SysCo'
   },
   {
     title: true,

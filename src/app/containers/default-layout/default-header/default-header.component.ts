@@ -24,9 +24,9 @@ export class DefaultHeaderComponent extends HeaderComponent {
     this.router.navigate(['profiles'])
   }
   gotooffers(){
-    this.router.navigate([''])
+    this.router.navigate(['offres'])
   }
   gotomyprofile(){
-    this.router.navigate(['informations_generales'])
+    this.router.navigate(['myprofile'])
   };
 }

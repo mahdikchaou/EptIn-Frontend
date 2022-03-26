@@ -1,0 +1,22 @@
+{
+  "offres": [
+    {
+      "id": 1,
+      "country": "usa",
+      "city": "colorado",
+      "authority": "colorado university",
+      "type": "master",
+      "name": "master mecanics",
+      "desc": "just for test"
+    },
+    {
+      "id": 2,
+      "country": "usa",
+      "city": "colorado",
+      "authority": "colorado university",
+      "type": "master",
+      "name": "master mecanics",
+      "desc": "just for test"
+    }
+  ]
+}

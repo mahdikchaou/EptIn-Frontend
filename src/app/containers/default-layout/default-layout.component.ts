@@ -1,12 +1,12 @@
-import { Component , Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import { navItems } from './_nav';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-default-layout',
   templateUrl: './default-layout.component.html',
 })
-export class DefaultLayoutComponent {
+export class DefaultLayoutComponent implements OnInit{
 
   public navItems = navItems;
 
@@ -15,4 +15,7 @@ export class DefaultLayoutComponent {
   };
 
   constructor() {}
+
+  ngOnInit(): void {
+  }
 }

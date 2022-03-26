@@ -1,0 +1,18 @@
+<table [striped]="true" cTable>
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">name</th>
+    <th scope="col">type</th>
+    <th scope="col">description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let offre of offres">
+    <th scope="row">1</th>
+    <td>{{offre.name}}</td>
+    <td>{{offre.type}}</td>
+    <td>{{offre.desc}}</td>
+  </tr>
+  </tbody>
+</table>
