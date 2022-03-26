@@ -1,12 +1,12 @@
-<br>
+<div *ngFor="let infogn of infogn"><br>
 <c-row>
   <c-col [xs]>
     <label cLabel for="firstname">First name</label>
-    <input id="firstname" aria-label="First name" cFormControl placeholder="First name" />
+    <input id="firstname" aria-label="First name" cFormControl placeholder={{infogn.first_name}} />
   </c-col>
   <c-col [xs]>
     <label cLabel for="lastname">Last name</label>
-    <input id="lastname" aria-label="Last name" cFormControl placeholder="Last name" />
+    <input id="lastname" aria-label="Last name" cFormControl placeholder={{infogn.last_name}} />
   </c-col>
 </c-row>
 <br>
@@ -14,7 +14,7 @@
   <c-col [xs]>
     <label cLabel for="gender">Gender</label>
     <select cSelect id="gender">
-      <option>Choose...</option>
+      <option>{{infogn.gender}}</option>
       <option value="1">Male</option>
       <option value="2">Female</option>
       <option value="3">Other</option>
@@ -22,14 +22,14 @@
   </c-col>
   <c-col [xs]>
     <label cLabel for="birthday">Birthday</label>
-    <input id="birthday" aria-label="Birthday" cFormControl placeholder="Birthday" type="date"/>
+    <input id="birthday" aria-label="Birthday" cFormControl placeholder={{infogn.birthday}} type="date"/>
   </c-col>
 </c-row>
 <br>
 <form cForm class="row g-3">
   <c-col [md]="6">
     <label cLabel for="inputEmail4">Email</label>
-    <input cFormControl id="inputEmail4" type="email" />
+    <input cFormControl id="inputEmail4" type="email" placeholder={{infogn.email}} />
   </c-col>
   <c-col [md]="6">
     <label cLabel for="inputPassword4">Password</label>
@@ -37,12 +37,12 @@
   </c-col>
   <c-col [md]="6">
     <label cLabel for="inputCity">City</label>
-    <input cFormControl id="inputCity" />
+    <input cFormControl id="inputCity" placeholder={{infogn.city}} />
   </c-col>
   <c-col [md]="4">
     <label cLabel for="country">Country</label>
     <select cSelect id="country">
-      <option>Choose...</option>
+      <option>{{infogn.country}}</option>
       <option value="Afganistan">Afghanistan</option>
       <option value="Albania">Albania</option>
       <option value="Algeria">Algeria</option>
@@ -301,3 +301,4 @@
   </c-col>
 </form>
 <br>
+</div>
