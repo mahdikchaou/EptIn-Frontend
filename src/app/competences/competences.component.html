@@ -1,0 +1,42 @@
+<div>
+  <br><br>
+  <c-row>
+    <c-col [xs]>
+      <label cLabel for="name">Name</label>
+      <input id="name" cFormControl placeholder="" />
+    </c-col>
+    <c-col [xs]>
+      <label cLabel for="field">Field</label>
+      <input id="field" cFormControl placeholder="" />
+    </c-col>
+    <c-col [xs]>
+      <label cLabel for="authority">Authority</label>
+      <input id="authority" cFormControl placeholder="" />
+    </c-col>
+  </c-row>
+  <br>
+  <c-row>
+    <c-col [xs]>
+      <label cLabel for="issuedate">Issue Date</label>
+      <input id="issuedate"cFormControl type="date"/>
+    </c-col>
+    <c-col [xs]>
+      <label cLabel for="expirationdate">Expiration Date</label>
+      <input id="expirationdate" cFormControl  type="date"/>
+    </c-col>
+  </c-row>
+  <br>
+  <div cFormFloating>
+    <p>Feel free to add any comment (Ex: why you felt like learning this skill):</p>
+    <textarea
+      [ngStyle]="{ 'height.px': 150 }"
+      cFormControl
+      id="CommentEducation">
+  </textarea>
+  </div>
+</div>
+<br>
+<c-col [xs]="12">
+  <button cButton type="submit">Update</button>
+</c-col>
+<br>

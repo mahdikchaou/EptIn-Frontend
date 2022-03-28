@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OffresService} from "./offres.service";
 import {Offre} from "../models/offre";
+import {stringify} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-offres',

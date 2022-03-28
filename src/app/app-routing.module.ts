@@ -19,11 +19,15 @@ import {stringify} from "@angular/compiler/src/util";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'offres',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'home',
+    redirectTo: 'home/offres',
+  },
+  {
+    path: 'home',
     component: DefaultLayoutComponent,
     children: [
       {

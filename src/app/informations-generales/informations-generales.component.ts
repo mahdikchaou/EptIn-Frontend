@@ -41,7 +41,6 @@ export class InformationsGeneralesComponent implements OnInit{
     this.infognservice.getInformationsGeneralesList().subscribe(data => {
       //alert(JSON.stringify(data));
       this.infogn = data;
-      alert(JSON.stringify(this.infogn))
     });
   }
 

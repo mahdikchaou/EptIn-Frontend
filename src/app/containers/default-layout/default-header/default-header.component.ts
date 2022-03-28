@@ -21,10 +21,10 @@ export class DefaultHeaderComponent extends HeaderComponent {
     super();
   }
   gotoprofilespage(){
-    this.router.navigate(['profiles'])
+    this.router.navigate(['home/profiles'])
   }
   gotooffers(){
-    this.router.navigate(['offres'])
+    this.router.navigate(['home/offres'])
   }
   gotomyprofile(){
     this.router.navigate(['myprofile'])
