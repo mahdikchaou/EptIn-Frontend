@@ -218,7 +218,7 @@ export enum IconSubset {
   cilCog='cilCog',
   cilBuilding='cilBuilding',
   cilCarAlt='cilCarAlt',
-  cilAirplaneMode='cilAirplaneMode',
+  cilAirplaneMode='aerospatial',
   cibCcAmex = 'cibCcAmex',
   cibCcApplePay = 'cibCcApplePay',
   cibCcMastercard = 'cibCcMastercard',

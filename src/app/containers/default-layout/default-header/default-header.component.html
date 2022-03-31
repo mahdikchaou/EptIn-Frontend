@@ -30,12 +30,8 @@
 
   </c-container>
   <c-header-divider></c-header-divider>
-  <c-container [fluid]="true" style="padding-left: 2.5rem; font-size:2rem">
-    <c-nav-item>
-      <a cNavLink routerLink="/dashboard" routerLinkActive="active" style="color: black">
-        {{type}}
-      </a>
-    </c-nav-item>
+  <c-container [fluid]="true" style="padding-left:4rem; font-size:2rem">
+    <c-breadcrumb-router class="ms-2"></c-breadcrumb-router>
   </c-container>
 </ng-container>
 

@@ -1,33 +1,49 @@
 {
   "offres": [
     {
-      "id": 1,
-      "country": "usa",
-      "city": "colorado",
-      "authority": "colorado university",
-      "type": "master",
-      "name": "master mecanics",
-      "desc": "just for test"
-    },
-    {
-      "id": 2,
-      "country": "usa",
-      "city": "colorado",
-      "authority": "colorado university",
-      "type": "master",
-      "name": "master mecanics",
-      "desc": "just for test"
+      "field": [
+        {
+          "id": 5,
+          "name": "Mechanical Engineering"
+        },
+        {
+          "id": 4,
+          "name": "Energy engineering"
+        },
+        {
+          "id": 2,
+          "name": "Automobile Engineering"
+        },
+        {
+          "id": 6,
+          "name": "Industrial Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "BMW",
+      "type": "stage",
+      "comment": "For 2nd grade SYSCO student.",
+      "country": "Tunisia",
+      "city": "Tunis",
+      "authorityPhoneNumber": "70 837 355",
+      "authorityEmail": "https://www.bmw-tunisia.com/fr/index.html",
+      "startDate": "2022-07-01",
+      "endDate": "2022-07-31",
+      "id": 1
     }
   ],
   "user": [
     {
-      "first_name": "Mahdi",
-      "last_name": "Kchaou",
-      "gender": "male",
+      "firstName": "Mahdi",
+      "lastName": "Kchaou",
+      "gender": "Male",
       "birthday": "2000-07-02",
-      "email": "kchaoum07@gmail.com",
       "country": "Tunisia",
-      "city": "Sfax"
+      "city": "Sfax",
+      "phoneNumber": 21210805,
+      "email": "kchaoum07@gmail.com",
+      "password": "mk",
+      "id": 1
     }
   ]
 }

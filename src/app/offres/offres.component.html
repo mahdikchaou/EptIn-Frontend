@@ -1,18 +1,39 @@
-<table [striped]="true" cTable>
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">name</th>
-    <th scope="col">type</th>
-    <th scope="col">description</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let offre of offres">
-    <th scope="row">1</th>
-    <td>{{offre.name}}</td>
-    <td>{{offre.type}}</td>
-    <td>{{offre.desc}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="row justify-content-center">
+    <div class="col-12">
+      <div class="section-title text-center mb-4 pb-2">
+        <h4 class="title mb-4">Offers</h4>
+        <p class="text-muted para-desc mx-auto mb-0">You can choose your preferred branch using the sidebar</p>
+      </div>
+    </div><!--end col-->
+  </div><!--end row-->
+<c-row >
+  <c-col *ngFor="let offres of offres">
+    <div>
+      <div class="card service-wrapper rounded border-0 shadow p-4">
+        <c-row>
+          <c-col [xs]>
+            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+              <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2em"><rect width="20" height="15" x="2" y="3" class="uim-tertiary" rx="3"></rect><path class="uim-primary" d="M16,21H8a.99992.99992,0,0,1-.832-1.55469l4-6a1.03785,1.03785,0,0,1,1.66406,0l4,6A.99992.99992,0,0,1,16,21Z"></path></svg></span>
+            </div>
+          </c-col>
+          <c-col [xs]>
+            <p style="font-size: 1.5rem">Offered by {{offres.authority}}</p>
+          </c-col>
+        </c-row>
+        <div class="content mt-4">
+          <h5 class="title">{{offres.type.toUpperCase()}}</h5>
+          <p class="text-muted mt-3 mb-0"> {{offres.type}} in {{offres.field}} </p>
+          <p class="text-muted mt-3 mb-0"> Starts in {{offres.startDate}} and ends in {{offres.endDate}} </p>
+          <div class="mt-3">
+            <button (click)="gotoOffer()" cBgColor="white" cBorder="false" cTextColor="primary" >Read More </button>
+          </div>
+        </div>
+        <div class="big-icon h1 text-custom">
+          <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em"><rect width="20" height="15" x="2" y="3" class="uim-tertiary" rx="3"></rect><path class="uim-primary" d="M16,21H8a.99992.99992,0,0,1-.832-1.55469l4-6a1.03785,1.03785,0,0,1,1.66406,0l4,6A.99992.99992,0,0,1,16,21Z"></path></svg></span>
+        </div>
+      </div>
+      <br> <br>
+    </div>
+
+  </c-col>
+</c-row>

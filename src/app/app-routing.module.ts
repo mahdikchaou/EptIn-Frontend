@@ -14,7 +14,10 @@ import {EducationComponent} from "./education/education.component";
 import {AppliedComponent} from "./applied/applied.component";
 import {OffresComponent} from "./offres/offres.component";
 import {InformationsGeneralesComponent} from "./informations-generales/informations-generales.component";
-import {stringify} from "@angular/compiler/src/util";
+import {OfferComponent} from "./offer/offer.component";
+import {ViewProfileComponent} from "./view-profile/view-profile.component";
+
+
 
 const routes: Routes = [
   {
@@ -33,11 +36,25 @@ const routes: Routes = [
       {
         path:'profiles',
         component:ProfilespageComponent,
+        data: {
+          title: 'People'
+        },
       },
       {
         path:'offres',
         component:OffresComponent,
+        data: {
+          title: 'Offers'
+        },
       },
+      {
+        path:'offer',
+        component: OfferComponent,
+      },
+      {
+        path:'profile',
+        component: ViewProfileComponent
+      }
     ]
   },
   {
@@ -55,53 +72,64 @@ const routes: Routes = [
   {
     path:'myprofile',
     component:MyprofileComponent,
+    data: {
+      title: 'My Profile'
+    },
     children: [
       {
         path:'informations_generales',
         component:InformationsGeneralesComponent,
+        data: {
+          title: 'General Informations'
+        },
       },
       {
         path:'experience',
         component:ExperienceComponent,
+        data: {
+          title: 'Experience'
+        },
       },
       {
         path:'competences',
         component:CompetencesComponent,
+        data: {
+          title: 'Competences'
+        },
       },
       {
         path:'offres_crees',
         component:CreeComponent,
         data: {
-          title: 'Cree Page'
+          title: 'Created Offers'
         },
       },
       {
         path:'creer_offre',
         component:CreerComponent,
         data: {
-          title: 'Creer Page'
+          title: 'Create an Offer'
         },
       },
       {
         path:'education',
         component:EducationComponent,
         data: {
-          title: 'education Page'
+          title: 'Education'
         },
       },
       {
         path:'applied',
         component:AppliedComponent,
         data: {
-          title: 'applied Page'
+          title: 'Applied Offers'
         },
       },
-
     ],
   },
 
 
-  {path: '**', redirectTo: 'offres'}
+  {path: '**', redirectTo: 'offres'},
 ];
 
 @NgModule({

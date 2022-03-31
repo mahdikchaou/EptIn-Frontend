@@ -19,12 +19,4 @@ export class InformationsGeneralesService {
   deleteINformationsGeneralesList(){
 
   }
-  /*updateInformationsGenerales(infogn:Informationsgenerales): Observable<any>{
-    const httpOptions={
-      headers: new HttpHeaders({'Content-Type':'application/json'}),
-    };
-    return this.http.put('http://localhost:3000/user'),infogn,httpOptions.pipe{
-       catchError(error=> of(new InformationsGenerales())
-    }
-  }*/
 }

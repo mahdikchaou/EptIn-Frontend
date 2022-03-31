@@ -59,6 +59,12 @@ import { CreerComponent } from './creer/creer.component';
 import { OffresComponent } from './offres/offres.component';
 import { HttpClientModule} from "@angular/common/http";
 import { InformationsGeneralesComponent } from './informations-generales/informations-generales.component';
+import { OfferComponent } from './offer/offer.component';
+import {NgSelectModule} from "@ng-select/ng-select";
+import { FormsModule } from '@angular/forms';
+import {OffresService} from "./offres/offres.service";
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+
 
 
 
@@ -76,7 +82,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent, ProfilespageComponent, EducationComponent, CompetencesComponent, ExperienceComponent, AppliedComponent, CreeComponent, CreerComponent, OffresComponent, InformationsGeneralesComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent, ProfilespageComponent, EducationComponent, CompetencesComponent, ExperienceComponent, AppliedComponent, CreeComponent, CreerComponent, OffresComponent, InformationsGeneralesComponent, OfferComponent, ViewProfileComponent,],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -106,8 +112,11 @@ const APP_CONTAINERS = [
     CardModule,
     TableModule,
     HttpClientModule,
+    NgSelectModule,
+    FormsModule
   ],
   providers: [
+    OffresService,
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy,

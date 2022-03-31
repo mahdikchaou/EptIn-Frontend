@@ -1,9 +1,12 @@
 export interface Offre {
-  id: number
   country?: string,
   city?: string,
   authority: string,
   type: string,
   name: string,
-  desc?: string
+  comment?: string,
+  authorityContact?:string,
+  startDate?:string,
+  endDate?:string,
+  field:string,
 }

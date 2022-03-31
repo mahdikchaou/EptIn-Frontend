@@ -7,7 +7,6 @@ import { navItems } from './_nav';
   templateUrl: './default-layout.component.html',
 })
 export class DefaultLayoutComponent implements OnInit{
-
   public navItems = navItems;
 
   public perfectScrollbarConfig = {
@@ -17,5 +16,6 @@ export class DefaultLayoutComponent implements OnInit{
   constructor() {}
 
   ngOnInit(): void {
+
   }
 }

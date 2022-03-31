@@ -1,9 +1,11 @@
 export interface Informationsgenerales{
-  first_name:string,
-  last_name:string,
+  firstName:string,
+  lastName:string,
   gender:string,
   birthday:string,
   email:string,
   country:string,
   city:string,
+  password:string,
+  phoneNumber:number,
 }
