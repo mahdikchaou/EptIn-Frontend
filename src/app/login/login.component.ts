@@ -2,20 +2,23 @@ import { Component ,OnInit} from '@angular/core';
 import{FormGroup, FormBuilder} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import{DataService} from "../data.service";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  message!:string;
   public loginForm!: FormGroup
-  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private data:DataService) { }
   ngOnInit(): void{
     this.loginForm=this.formBuilder.group({
       email:[''],
       password:[''],
-    })
-
+    });
+    this.data.currentMessage.subscribe(message=>this.message=message)
   }
 
   gotoregister(){
@@ -28,7 +31,6 @@ export class LoginComponent {
           return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
           });
         if(user){
-          alert("login Success");
           this.loginForm.reset();
           this.router.navigate(['home'])
         }else{
@@ -38,6 +40,9 @@ export class LoginComponent {
         alert("Something went wrong. Try again")
     })
   }
-
+  toggle(event: Event):void{
+    let elementId:string=(event.target as Element).id;
+    this.data.changeMessage(elementId);
+  };
 
 }

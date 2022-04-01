@@ -12,33 +12,42 @@
   <br>
   <c-container>
     <br>
-    <h4>Name</h4>
+    <h4>{{offer.name}}</h4>
+    <br>
     <c-row>
       <c-col [xs]>
         <label cLabel for="type">Type </label>
-        <input cBgColor="white" id="type" cFormControl disabled value="type" />
+        <input cBgColor="white" id="type" cFormControl disabled value={{offer.type}} />
       </c-col>
       <c-col [xs]>
-        <label cLabel for="Field">Field(s) </label>
-        <input cBgColor="white" id="Field" cFormControl placeholder="" />
+        <label cLabel for="fields">Filed(s)</label>
+        <ng-select formControlName="field" id="fields" [items]="items"
+                   bindLabel="name"
+                   placeholder="Select item"
+                   appendTo="body"
+                   [multiple]="true"
+                   [clearable]="true"
+                   [searchable]="true"
+        >
+        </ng-select>
       </c-col>
     </c-row>
     <br>
     <c-row>
       <c-col [xs]>
         <label cLabel for="authority">Authority</label>
-        <input cBgColor="white" id="authority"  cFormControl value="mahdi"  disabled/>
+        <input cBgColor="white" id="authority"  cFormControl value={{offer.authority}}  disabled/>
       </c-col>
     </c-row>
     <br>
     <c-row>
       <c-col [xs]>
-        <label cLabel for="authorityEmail">Authority Email</label>
-        <input cBgColor="white" id="authorityEmail"  cFormControl value="mahdi"  disabled/>
+        <label cLabel for="authorityEmail"> Authority Email</label>
+        <input cBgColor="white" id="authorityEmail"  cFormControl value={{offer.authorityEmail}} disabled/>
       </c-col>
       <c-col [xs]>
         <label cLabel for="authorityPhoneNumber">Auhtority Phone Number </label>
-        <input cBgColor="white" id="authorityPhoneNumber" cFormControl disabled value="fully funded" />
+        <input cBgColor="white" id="authorityPhoneNumber" cFormControl disabled value={{offer.authorityPhoneNumber}} />
       </c-col>
     </c-row>
 
@@ -46,11 +55,11 @@
     <c-row>
       <c-col [md]="6">
         <label cLabel for="inputCity" >City</label>
-        <input cBgColor="white" cFormControl id="inputCity" disabled placeholder="" />
+        <input cBgColor="white" cFormControl id="inputCity" disabled value={{offer.city}} />
       </c-col>
       <c-col [md]="4">
         <label cLabel for="country">Country</label>
-        <select cBgColor="white" cSelect disabled id="country">
+        <select cBgColor="white" cSelect disabled id="country" disabled value={{offer.country}}>
           <option>choose</option>
           <option value="Afganistan">Afghanistan</option>
           <option value="Albania">Albania</option>
@@ -298,7 +307,7 @@
           <option value="Zaire">Zaire</option>
           <option value="Zambia">Zambia</option>
           <option value="Zimbabwe">Zimbabwe</option>
-        </select >
+        </select>
       </c-col>
     </c-row>
 
@@ -306,16 +315,16 @@
     <c-row>
       <c-col [xs]>
         <label cLabel for="startdate">Start Date</label>
-        <input id="startdate" disabled cFormControl type="date" cBgColor="white"/>
+        <input id="startdate" disabled cFormControl type="date" cBgColor="white" value={{offer.startDate}} disabled/>
       </c-col>
       <c-col [xs]>
         <label cLabel for="endDate">End Date</label>
-        <input id="endDate" disabled cFormControl  type="date" cBgColor="white"/>
+        <input id="endDate" disabled cFormControl  type="date" cBgColor="white" value={{offer.endDate}} disabled/>
       </c-col>
     </c-row>
     <br>
     <label cLabel for="exampleFormControlTextarea1">Spare no detail about this offer: </label>
-    <textarea disabled cBgColor="white" cFormControl id="exampleFormControlTextarea1" rows="3" [ngStyle]="{ 'height.px': 150 }"></textarea>
+    <textarea disabled cBgColor="white" cFormControl id="exampleFormControlTextarea1" rows="3" [ngStyle]="{ 'height.px': 150 }" value={{offer.comment}}></textarea>
     <br>
   </c-container>
 </div>

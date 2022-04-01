@@ -8,4 +8,5 @@ export interface Informationsgenerales{
   city:string,
   password:string,
   phoneNumber:number,
+  id:number;
 }

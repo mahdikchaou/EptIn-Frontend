@@ -19,7 +19,7 @@
           "name": "Industrial Engineering"
         }
       ],
-      "name": "",
+      "name": "Germnay car company association",
       "authority": "BMW",
       "type": "stage",
       "comment": "For 2nd grade SYSCO student.",
@@ -30,6 +30,65 @@
       "startDate": "2022-07-01",
       "endDate": "2022-07-31",
       "id": 1
+    },
+    {
+      "field": [
+        {
+          "id": 11,
+          "name": "Telecommunication Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "jfg",
+      "type": "master",
+      "comment": "gezg",
+      "country": "Bahrain",
+      "city": "treg",
+      "authorityPhoneNumber": "534",
+      "authorityEmail": "grt",
+      "startDate": "2022-03-26",
+      "endDate": "2022-04-08",
+      "id": 2
+    },
+    {
+      "field": [
+        {
+          "id": 2,
+          "name": "Automobile Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "regaeafz'r",
+      "type": "phd",
+      "comment": "zef",
+      "country": "Barbados",
+      "city": "zar",
+      "authorityPhoneNumber": "454",
+      "authorityEmail": "fzaf",
+      "startDate": "2022-03-12",
+      "endDate": "2022-04-09",
+      "id": 3
+    },
+    {
+      "field": [
+        {
+          "name": "Automobile Engineering"
+        },
+        {
+          "name": "Mechanical Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "zsd",
+      "type": "master",
+      "comment": "efv",
+      "country": "Bahamas",
+      "city": "zfzf",
+      "authorityPhoneNumber": "537",
+      "authorityEmail": "erg",
+      "startDate": "2022-03-30",
+      "endDate": "2022-03-17",
+      "id": 4
     }
   ],
   "user": [
@@ -44,6 +103,43 @@
       "email": "kchaoum07@gmail.com",
       "password": "mk",
       "id": 1
+    },
+    {
+      "firstName": "Imen",
+      "lastName": "Tounsi",
+      "gender": "",
+      "birthday": "",
+      "country": "",
+      "city": "",
+      "phoneNumber": null,
+      "email": "imen.tounsi@gmail.com",
+      "password": "im",
+      "id": 2
+    }
+  ],
+  "education": [
+    {
+      "prepa": "ipeis",
+      "userId": 1
+    }
+  ],
+  "certification": [
+    {
+      "userId": 1,
+      "name": "java project",
+      "authority": "me"
+    }
+  ],
+  "experience": [
+    {
+      "userId": 1,
+      "companyName": "Mercedes"
+    }
+  ],
+  "skill": [
+    {
+      "userId": 1,
+      "name": "blabla"
     }
   ]
 }

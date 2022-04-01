@@ -13,18 +13,18 @@ import {HttpClient} from "@angular/common/http";
 export class CreerComponent{
   public createOfferForm !: FormGroup;
   items = [
-    {id: 1, name: 'Aerospace Engineering'},
-    {id: 2, name: 'Automobile Engineering'},
-    {id: 3, name: 'Civil Engineering'},
-    {id: 4, name: 'Energy engineering'},
-    {id: 5, name: 'Mechanical Engineering'},
-    {id: 6, name: 'Industrial Engineering'},
-    {id: 7, name: 'Nuclear Engineering'},
-    {id: 8, name: 'Hydraulic Engineering'},
-    {id: 9, name: 'Computer Engineering'},
-    {id: 10, name: 'Electrical Engineering'},
-    {id: 11, name: 'Telecommunication Engineering'},
-    {id: 12, name: 'engineering Management'},
+    {name: 'Aerospace Engineering'},
+    {name: 'Automobile Engineering'},
+    {name: 'Civil Engineering'},
+    {name: 'Energy engineering'},
+    {name: 'Mechanical Engineering'},
+    {name: 'Industrial Engineering'},
+    {name: 'Nuclear Engineering'},
+    {name: 'Hydraulic Engineering'},
+    {name: 'Computer Engineering'},
+    {name: 'Electrical Engineering'},
+    {name: 'Telecommunication Engineering'},
+    {name: 'engineering Management'},
 
   ];
   public perfectScrollbarConfig = {
