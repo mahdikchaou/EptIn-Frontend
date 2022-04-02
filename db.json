@@ -134,13 +134,22 @@
     {
       "firstName": "Imen",
       "lastName": "Tounsi",
-      "gender": "",
-      "birthday": "",
-      "country": "",
-      "city": "",
+      "gender": "2",
+      "birthday": "2000-11-05",
+      "country": "Tunisia",
+      "city": "Sfax",
       "phoneNumber": null,
       "email": "imen.tounsi@gmail.com",
       "password": "im",
+      "field": [
+        {
+          "id": 1,
+          "name": "Aerospace Engineering"
+        },
+        {
+          "name": "Energy engineering"
+        }
+      ],
       "id": 2
     }
   ],

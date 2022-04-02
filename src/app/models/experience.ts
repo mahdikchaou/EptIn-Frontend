@@ -5,6 +5,6 @@ export interface experience{
   employmentType:string;
   jobTitle:string;
   comment:string;
-  userId:number;
-
+  userId:string;
+  id:number
 }

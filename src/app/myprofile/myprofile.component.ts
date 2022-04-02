@@ -20,7 +20,6 @@ export class MyprofileComponent {
 
   constructor(private router:Router) {}
   ngOnInit():void{
-    alert(this.m)
   }
   gotomyprofile(){
     this.router.navigate(['myprofile/informations_generales'])

@@ -1,4 +1,4 @@
-<div *ngFor="let infogn of infogn"><br>
+<form cForm [formGroup]="infoGnForm" (ngSubmit)="updateInfoGn()"><br>
   <c-row>
     <div class=[xs]>
       <!-- Profile picture card-->
@@ -15,46 +15,41 @@
   <c-row>
     <c-col [xs]>
       <label cLabel for="firstname">First name</label>
-      <input id="firstname" aria-label="First name" cFormControl placeholder="First Name" value={{infogn.firstName}}/>
+      <input id="firstname" aria-label="First name" cFormControl formControlName="firstName" placeholder= {{infogn.firstName}}/>
     </c-col>
     <c-col [xs]>
       <label cLabel for="lastname">Last name</label>
-      <input id="lastname" aria-label="Last name" cFormControl placeholder="Last Name" value={{infogn.lastName}}/>
+      <input id="lastname" aria-label="Last name" cFormControl  formControlName="lastName" placeholder= {{infogn.lastName}}/>
     </c-col>
   </c-row>
   <br>
   <c-row>
     <c-col [xs]>
       <label cLabel for="gender">Gender</label>
-      <select cSelect id="gender">
+      <select cSelect id="gender"  formControlName="gender">
         <option>{{infogn.gender}}</option>
-        <option value="1">Male</option>
-        <option value="2">Female</option>
-        <option value="3">Other</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
       </select>
     </c-col>
     <c-col [xs]>
       <label cLabel for="birthday">Birthday</label>
-      <input id="birthday" aria-label="Birthday" cFormControl value={{infogn.birthday}} type="date"/>
+      <input id="birthday" aria-label="Birthday"  formControlName="birthday" cFormControl placeholder={{infogn.birthday}} type="date"/>
     </c-col>
   </c-row>
   <br>
-  <form cForm class="row g-3">
     <c-row><c-col [md]="6">
       <label cLabel for="inputEmail4">Email</label>
-      <input cFormControl id="inputEmail4" type="email" placeholder="Email" value={{infogn.email}}/>
+      <input formControlName="email" cFormControl id="inputEmail4" type="email" placeholder={{infogn.email}}/>
     </c-col>
       <c-col [md]="6">
         <label cLabel for="inputPassword4">Password</label>
-        <input cFormControl id="inputPassword4" type="password" value={{infogn.password}}/>
+        <input formControlName="password" cFormControl id="inputPassword4" type="password" placeholder={{infogn.password}}/>
       </c-col></c-row>
 
     <br><br>
     <c-row>
-      <c-col [xs] >
-        <label cLabel for="phoneNumber">Password</label>
-        <input cFormControl id="phoneNumber" type="password" value={{infogn.phoneNumber}}/>
-      </c-col>
       <c-col [xs]>
         <label cLabel for="fields">Filed(s): </label>
         <span *ngFor="let fields of infogn.field"> {{fields.name}},</span>
@@ -64,17 +59,18 @@
                    [multiple]="true"
                    [clearable]="true"
                    [searchable]="true">
+          formControlName="field"
         </ng-select>
       </c-col>
     </c-row>
 
     <c-col [md]="6">
       <label cLabel for="inputCity">City</label>
-      <input cFormControl id="inputCity" placeholder="City" value={{infogn.city}}/>
+      <input cFormControl formControlName="city" id="inputCity" placeholder={{infogn.city}}/>
     </c-col>
     <c-col [md]="4">
       <label cLabel for="country">Country</label>
-      <select cSelect id="country">
+      <select formControlName="country" cSelect id="country">
         <option>{{infogn.country}}</option>
         <option value="Afganistan">Afghanistan</option>
         <option value="Albania">Albania</option>
@@ -332,6 +328,5 @@
     <c-col [xs]="12">
       <button cButton type="submit">Update</button>
     </c-col>
-  </form>
   <br>
-</div>
+</form>

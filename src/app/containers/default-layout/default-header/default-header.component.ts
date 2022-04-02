@@ -1,8 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import{Router} from "@angular/router";
-import { ClassToggleService, HeaderComponent } from '@coreui/angular';
+import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
+import {ClassToggleService, HeaderComponent} from '@coreui/angular';
 import {DataService} from "../../../data.service";
+import {AuthenticationService} from "../../../_services";
+import {userIdService} from "../../../user-id.service";
+import {Informationsgenerales} from "../../../models/Informationsgenerales";
+import {DefaultHeaderService} from "./default-header.service";
 
 @Component({
   selector: 'app-default-header',
@@ -12,24 +15,39 @@ export class DefaultHeaderComponent extends HeaderComponent {
 
   @Input() sidebarId: string = "sidebar";
 
-  public newMessages = new Array(4)
-  public newTasks = new Array(5)
-  public newNotifications = new Array(5)
-
-  constructor(private classToggler: ClassToggleService, private router:Router, private data:DataService) {
+  constructor(private classToggler: ClassToggleService, private router: Router, private userId: userIdService,
+              private authService: AuthenticationService, private defaultHeaderService:DefaultHeaderService) {
     super();
   }
-  message!:string;
-  ngOnInit():void{
-    this.data.currentMessage.subscribe(message=>this.message=message);
+  informationsGenerales!:Informationsgenerales;
+
+
+  message!: string;
+
+  ngOnInit(): void {
+    this.userId.currentMessage.subscribe(message => this.message = message);
+    this.defaultHeaderService.getInformationsGenerales(this.message).subscribe(data1 => {
+      this.informationsGenerales = data1;
+    });
   }
-  gotoprofilespage(){
+
+  gotoprofilespage() {
     this.router.navigate(['home/profiles'])
   }
-  gotooffers(){
+
+  gotooffers() {
     this.router.navigate(['home/offres'])
   }
-  gotomyprofile(){
+
+  gotomyprofile() {
     this.router.navigate(['myprofile'])
   };
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['']);
+  };
+
+
+
 }

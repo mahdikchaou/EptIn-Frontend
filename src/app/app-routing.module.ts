@@ -16,6 +16,10 @@ import {OffresComponent} from "./offres/offres.component";
 import {InformationsGeneralesComponent} from "./informations-generales/informations-generales.component";
 import {OfferComponent} from "./offer/offer.component";
 import {ViewProfileComponent} from "./view-profile/view-profile.component";
+import {AuthGuard} from "./helpers/auth.guard";
+import {Role} from "./models/role";
+import {Page404Component} from "./page404/page404.component";
+import {AdminComponent} from "./admin/admin.component";
 
 
 
@@ -31,8 +35,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    canActivate: [AuthGuard],
+    data: {roles: [Role.STUDENT, Role.EX_STUDENT]},
     component: DefaultLayoutComponent,
     children: [
+      {path: 'admin', component: AdminComponent, canActivate: [AuthGuard],
+        data: {roles: [Role.ADMIN]},},
       {
         path:'profiles',
         component:ProfilespageComponent,
@@ -57,6 +65,8 @@ const routes: Routes = [
       }
     ]
   },
+
+  {path: 'error-404', component: Page404Component},
   {
     path:'login',
     component:LoginComponent,
@@ -72,9 +82,8 @@ const routes: Routes = [
   {
     path:'myprofile',
     component:MyprofileComponent,
-    data: {
-      title: 'My Profile'
-    },
+    canActivate: [AuthGuard],
+    data: {roles: [Role.STUDENT, Role.EX_STUDENT]},
     children: [
       {
         path:'informations_generales',
@@ -100,16 +109,14 @@ const routes: Routes = [
       {
         path:'offres_crees',
         component:CreeComponent,
-        data: {
-          title: 'Created Offers'
-        },
+        canActivate: [AuthGuard],
+        data: {roles: [Role.EX_STUDENT]},
       },
       {
         path:'creer_offre',
         component:CreerComponent,
-        data: {
-          title: 'Create an Offer'
-        },
+        canActivate: [AuthGuard],
+        data: {roles: [Role.EX_STUDENT]},
       },
       {
         path:'education',

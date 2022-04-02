@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {CompetencesService} from "./competences.service";
+import {Certification} from "../models/certification";
+import {Skill} from "../models/skill";
+import {userIdService} from "../user-id.service";
 
 @Component({
   selector: 'app-competences',
@@ -7,14 +11,24 @@ import {Router} from "@angular/router";
   styleUrls: ['./competences.component.scss']
 })
 export class CompetencesComponent implements OnInit{
-
+  message!:string;
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-  constructor(private router:Router) {}
+  private certification!: Certification[];
+  private skill!: Skill[];
+  constructor(private router:Router, private competencesService: CompetencesService,private userId: userIdService) {}
 
   ngOnInit(): void {
         throw new Error('Method not implemented.');
+    this.userId.currentMessage.subscribe(message => this.message = message);
+
+    this.competencesService.getCertifications(this.message).subscribe(data2=>{
+      this.certification=data2;
+    })
+    this.competencesService.getSkills(this.message).subscribe(data2=>{
+      this.skill=data2;
+    })
     }
   gotomyprofile(){
     this.router.navigate(['myprofile/informations_generales'])

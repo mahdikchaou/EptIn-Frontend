@@ -8,8 +8,8 @@ import {Role} from '../models/role';
 
 const users: User[] = [
     {userId: 1, email: 'admin@gmail.com', password: '123', role: Role.ADMIN},
-    {userId: 2, email: 'abc@abc.com', password: '123', role: Role.STUDENT},
-    {userId: 3, email: 'talent@talent.com', password: '123', role: Role.EX_STUDENT},
+    {userId: 2, email: 'student@gmail.com', password: '123', role: Role.STUDENT},
+    {userId: 3, email: 'ex-student@gmail.com', password: '123', role: Role.EX_STUDENT},
 ];
 
 @Injectable()

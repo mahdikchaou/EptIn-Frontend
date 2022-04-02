@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import { navItems } from './_nav';
-import {DataService} from "../../data.service";
+import {userIdService} from "../../user-id.service";
 
 @Component({
   selector: 'app-default-layout',
@@ -14,18 +14,12 @@ export class DefaultLayoutComponent implements OnInit{
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-  message!: string;
 
-  constructor(private data:DataService) {
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message=>this.message=message)
-
   }
-  toggle(event: Event):void{
-    let elementId:string=(event.target as Element).id;
-    this.data.changeMessage(elementId);
-  };
+
 }

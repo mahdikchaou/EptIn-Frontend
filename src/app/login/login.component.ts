@@ -1,9 +1,11 @@
-import { Component ,OnInit} from '@angular/core';
-import{FormGroup, FormBuilder} from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import{DataService} from "../data.service";
+import {DataService} from "../data.service";
 import {AuthenticationService} from "../_services";
+import {Role} from "../models/role";
+import {userIdService} from "../user-id.service";
 
 @Component({
   selector: 'app-login',
@@ -11,43 +13,61 @@ import {AuthenticationService} from "../_services";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  message!:string;
-  public loginForm!: FormGroup
+  message!: string;
+  public loginForm!: FormGroup;
+  error = '';
+  loading = false;
+
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient,
-              private data:DataService, private authService: AuthenticationService) { }
-  ngOnInit(): void{
-    this.loginForm=this.formBuilder.group({
-      email:[''],
-      password:[''],
+              private userId: userIdService, private authService: AuthenticationService) {
+    // redirect to profile if already logged in
+    const currentUser = this.authService.currentUserValue;
+    if (currentUser) {
+      // navigate to profiles according to role
+      this.naviagateToProfileAccordingToRole(currentUser);
+
+
+    }
+  }
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: [''],
+      password: [''],
     });
-    this.data.currentMessage.subscribe(message=>this.message=message)
   }
 
-  gotoregister(){
-      this.router.navigate(['register'])
+  gotoregister() {
+    this.router.navigate(['register'])
   }
-  login(){
-    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(data => {
-      console.log("login : ", data);
-    });
-    // this.http.get<any>("http://localhost:3000/user")
-    //   .subscribe(res=>{
-    //     const user=res.find((a:any)=>{
-    //       return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
-    //       });
-    //     if(user){
-    //       this.loginForm.reset();
-    //       this.router.navigate(['home'])
-    //     }else{
-    //       alert("Email and password don't match")
-    //     }
-    //   },err=>{
-    //     alert("Something went wrong. Try again")
-    // })
-  }
-  toggle(event: Event):void{
-    let elementId:string=(event.target as Element).id;
-    this.data.changeMessage(elementId);
-  };
 
+  login() {
+    this.loading = true;
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
+      user => {
+        console.log('Login success - user info', user);
+        this.userId.changeMessage(user.userId)
+        if (user) {
+          // navigate to profiles according to role
+          this.naviagateToProfileAccordingToRole(user);
+        }
+      },
+      error => {
+        this.loading = false;
+        this.error = 'Invalid email or password';
+      });
+  }
+
+
+  // navigate to profiles according to role
+  private naviagateToProfileAccordingToRole(currentUser: any): void {
+    switch (currentUser.role) {
+      case Role.ADMIN:
+        this.router.navigate(['admin']);
+        break;
+      case Role.EX_STUDENT:
+      case Role.STUDENT:
+        this.router.navigate(['home']);
+        break;
+    }
+  }
 }

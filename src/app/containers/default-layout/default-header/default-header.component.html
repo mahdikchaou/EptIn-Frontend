@@ -40,7 +40,7 @@
   <c-container [fluid]="true" >
     <c-nav-item>
       <a cNavLink routerLink="/dashboard" routerLinkActive="active" style="color: black" (click)="gotomyprofile()">
-        First/Last name
+        <!--{{informationsGenerales.firstName}} {{informationsGenerales.lastName}}-->
       </a>
     </c-nav-item>
   </c-container>
@@ -82,7 +82,7 @@
         <hr cDropdownDivider/>
       </li>
       <li>
-        <a routerLink="./" cDropdownItem>
+        <a routerLink="./" cDropdownItem (click) ="logout()">
           <svg cIcon class="me-2" name="cilLockLocked"></svg>
           Log Out
         </a>

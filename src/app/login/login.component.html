@@ -6,6 +6,7 @@
         <c-card-group>
           <c-card class="p-4"  style="border-top-left-radius:5% ;border-bottom-left-radius:5% ">
             <c-card-body>
+              <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
               <form cForm [formGroup]="loginForm" (ngSubmit)="login()">
                 <h1>Login</h1>
                 <p class="text-medium-emphasis">Sign In to your account</p>
@@ -30,11 +31,12 @@
                 <c-row>
                   <c-col xs="6">
                     <button cButton class="px-4" color="primary" type="submit">
+                      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                       Login
                     </button>
                   </c-col>
                   <c-col class="text-right" xs="6">
-                    <button (click)="toggle($event)" cButton class="px-0" color="link">
+                    <button cButton class="px-0" color="link">
                       Forgot password?
                     </button>
                   </c-col>

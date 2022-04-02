@@ -21,7 +21,7 @@
       </c-col>
       <c-col [xs]>
         <label cLabel for="fields">Filed(s)</label>
-        <p *ngFor="let fields of offer.field">{{fields.name}}, </p>
+        <span *ngFor="let fields of offer.field">{{fields.name}}, </span>
       </c-col>
     </c-row>
     <br>
