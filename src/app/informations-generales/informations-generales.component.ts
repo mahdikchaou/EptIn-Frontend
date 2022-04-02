@@ -9,6 +9,23 @@ import {InformationsGeneralesService} from "./informations-generales.service";
   styleUrls: ['./informations-generales.component.scss']
 })
 export class InformationsGeneralesComponent implements OnInit{
+  items = [
+    {id:1, name: 'Aerospace Engineering'},
+    {id:2, name: 'Automobile Engineering'},
+    {name: 'Civil Engineering'},
+    {name: 'Energy engineering'},
+    {name: 'Mechanical Engineering'},
+    {name: 'Industrial Engineering'},
+    {name: 'Nuclear Engineering'},
+    {name: 'Hydraulic Engineering'},
+    {name: 'Computer Engineering'},
+    {name: 'Electrical Engineering'},
+    {name: 'Telecommunication Engineering'},
+    {name: 'Engineering Management'},
+  ];
+  selected=[
+    {name: 'Aerospace Engineering'},
+    {name: 'Automobile Engineering'},  ];
   infogn: Informationsgenerales[]=[];
 
   public perfectScrollbarConfig = {

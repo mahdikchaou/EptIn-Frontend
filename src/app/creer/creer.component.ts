@@ -13,6 +13,9 @@ import {HttpClient} from "@angular/common/http";
 export class CreerComponent{
   public createOfferForm !: FormGroup;
   items = [
+    {name:'Sysco'},
+    {name:'SYSI'},
+    {name:'EGES'},
     {name: 'Aerospace Engineering'},
     {name: 'Automobile Engineering'},
     {name: 'Civil Engineering'},

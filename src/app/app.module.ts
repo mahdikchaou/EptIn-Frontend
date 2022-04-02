@@ -84,6 +84,7 @@ const APP_CONTAINERS = [
 @NgModule({
   declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent, ProfilespageComponent, EducationComponent, CompetencesComponent, ExperienceComponent, AppliedComponent, CreeComponent, CreerComponent, OffresComponent, InformationsGeneralesComponent, OfferComponent, ViewProfileComponent,],
   imports: [
+    IconModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

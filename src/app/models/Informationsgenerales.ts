@@ -9,4 +9,5 @@ export interface Informationsgenerales{
   password:string,
   phoneNumber:number,
   id:number;
+  field:any;
 }

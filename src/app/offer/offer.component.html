@@ -21,15 +21,7 @@
       </c-col>
       <c-col [xs]>
         <label cLabel for="fields">Filed(s)</label>
-        <ng-select formControlName="field" id="fields" [items]="items"
-                   bindLabel="name"
-                   placeholder="Select item"
-                   appendTo="body"
-                   [multiple]="true"
-                   [clearable]="true"
-                   [searchable]="true"
-        >
-        </ng-select>
+        <p *ngFor="let fields of offer.field">{{fields.name}}, </p>
       </c-col>
     </c-row>
     <br>

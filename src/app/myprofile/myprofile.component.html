@@ -1,11 +1,11 @@
 <style>
-  c-container{
-    border-radius:  15px;
-    box-shadow:  0 10px 10px rgba(0,0,0,0.1);
+  c-container {
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     border-color: black;
     background-color: rgb(253, 253, 253);
     width: 70rem;
-    position:center;
+    position: center;
   }
 </style>
 <c-sidebar
@@ -30,13 +30,34 @@
   <br>
   <perfect-scrollbar [config]="perfectScrollbarConfig">
     <!--  [perfectScrollbar]="perfectScrollbarConfig"-->
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotomyprofile()">      Informations Générales </c-sidebar-nav>
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotoeducation()">      Education </c-sidebar-nav>
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotocompetences()">      Competences & Certifications </c-sidebar-nav>
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large;margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotoexperience()"> Experience </c-sidebar-nav>
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large;margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotopostule()">      Offres appliqués  </c-sidebar-nav>
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotocree()">      Offres crées </c-sidebar-nav>
-    <c-sidebar-nav style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem" (click)="gotocreer()">      Créer un offre </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotomyprofile()"> General Informations
+    </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotoeducation()"> Education
+    </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotocompetences()"> Skills & Certifications
+    </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large;margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotoexperience()"> Experience
+    </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large;margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotopostule()"> Applied Offers
+    </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotocree()"> Created Offers
+    </c-sidebar-nav>
+    <c-sidebar-nav
+      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem"
+      (click)="gotocreer()"> Create an Offer
+    </c-sidebar-nav>
   </perfect-scrollbar>
   <c-sidebar-toggler
     *ngIf="!sidebar.narrow"
@@ -48,7 +69,8 @@
 
 <!--main-->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
-  <app-default-header class="mb-4 d-print-none header header-sticky" position="sticky" sidebarId="sidebar" ></app-default-header>
+  <app-default-header class="mb-4 d-print-none header header-sticky" position="sticky"
+                      sidebarId="sidebar"></app-default-header>
 
   <!--app-body-->
   <div class="body flex-grow-1 px-3">

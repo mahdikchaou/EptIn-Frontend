@@ -21,6 +21,7 @@ export class OffresComponent implements OnInit {
       this.offres = data;
     });
     this.data.currentMessage.subscribe(message=>this.message=message)
+    alert(this.message)
   }
   toggle(event: Event):void{
     let elementId:string=(event.target as Element).id;

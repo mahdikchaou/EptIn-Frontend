@@ -3,6 +3,7 @@ import{FormGroup, FormBuilder} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import{DataService} from "../data.service";
+import {AuthenticationService} from "../_services";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import{DataService} from "../data.service";
 export class LoginComponent {
   message!:string;
   public loginForm!: FormGroup
-  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private data:DataService) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient,
+              private data:DataService, private authService: AuthenticationService) { }
   ngOnInit(): void{
     this.loginForm=this.formBuilder.group({
       email:[''],
@@ -25,20 +27,23 @@ export class LoginComponent {
       this.router.navigate(['register'])
   }
   login(){
-    this.http.get<any>("http://localhost:3000/user")
-      .subscribe(res=>{
-        const user=res.find((a:any)=>{
-          return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
-          });
-        if(user){
-          this.loginForm.reset();
-          this.router.navigate(['home'])
-        }else{
-          alert("Email and password don't match")
-        }
-      },err=>{
-        alert("Something went wrong. Try again")
-    })
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(data => {
+      console.log("login : ", data);
+    });
+    // this.http.get<any>("http://localhost:3000/user")
+    //   .subscribe(res=>{
+    //     const user=res.find((a:any)=>{
+    //       return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
+    //       });
+    //     if(user){
+    //       this.loginForm.reset();
+    //       this.router.navigate(['home'])
+    //     }else{
+    //       alert("Email and password don't match")
+    //     }
+    //   },err=>{
+    //     alert("Something went wrong. Try again")
+    // })
   }
   toggle(event: Event):void{
     let elementId:string=(event.target as Element).id;

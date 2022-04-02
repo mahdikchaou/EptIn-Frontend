@@ -89,10 +89,37 @@
       "startDate": "2022-03-30",
       "endDate": "2022-03-17",
       "id": 4
+    },
+    {
+      "field": [
+        {
+          "$ngOptionLabel": "mahdi",
+          "disabled": false
+        }
+      ],
+      "name": "",
+      "authority": "cherni",
+      "type": "stage",
+      "comment": "iouh",
+      "country": "Australia",
+      "city": "uhl",
+      "authorityPhoneNumber": "$587",
+      "authorityEmail": "ijjlm",
+      "startDate": "",
+      "endDate": "",
+      "id": 5
     }
   ],
   "user": [
     {
+      "field": [
+        {
+          "name": "Automobile Engineering"
+        },
+        {
+          "name": "Mechanical Engineering"
+        }
+      ],
       "firstName": "Mahdi",
       "lastName": "Kchaou",
       "gender": "Male",

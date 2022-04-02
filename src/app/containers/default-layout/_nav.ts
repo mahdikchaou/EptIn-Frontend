@@ -3,89 +3,85 @@ export const navItems: INavData[] = [
   {
     name: 'Branches',
     url: '/branches',
-    iconComponent: { name: 'cilSitemap' },
-    /*badge: {
-      color: '',
-      text: 'NEW'
-    }*/
+    icon:'cilSitemap',
   },
   {
     title: true,
     name: 'SysCo'
   },
   {
-    name: 'Génie aérospatial',
+    name: 'Aerospace Engineering',
     url: '/aerospatial',
-    iconComponent: {name:'cilAirplaneMode' }
+    icon:'cilAirplaneMode'
   },
   {
-    name: 'Ingénierie automobile',
+    name: 'Automobile Engineering',
     url: '/automobile',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilCarAlt' }
+    icon: 'cilCarAlt'
   },
   {
-    name: 'Génie civil',
+    name: 'Civil Engineering',
     url: '/civil',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilBuilding' }
+    icon: 'cilBuilding'
   },
   {
-    name: 'Génie énergétique',
+    name: 'Energy engineering',
     url: '/energetique',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilFire' }
+    icon: 'cilFire'
   },
   {
-    name: 'Ingénierie mécanique',
+    name: 'Mechanical Engineering',
     url: '/mecanique',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilCog' }
+    icon: 'cilCog'
   },
   {
-    name: 'Ingénieur industriel',
+    name: 'Industrial Engineering',
     url: '/industriel',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilIndustry' }
+    icon: 'cilIndustry'
   },
   {
-    name: 'Ingénierie nucléaire',
+    name: 'Nuclear Engineering',
     url: '/nucleaire',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilGraph' }
+    icon: 'cilGraph'
   },
   {
-    name: 'Ingénierie pétrolière',
+    name: 'Hydraulic Engineering',
     url: '/petroliere',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cibShell' }
+    icon: 'cibShell'
   },
   {
     name: 'SYSI',
     title: true
   },
   {
-    name: 'Ingénierie informatique',
+    name: 'Computer Engineering',
     url: 'informatique',
-    iconComponent: { name: 'cilCode' },
+    icon: 'cilCode',
   },
   {
-    name: 'Ingénierie électrique',
+    name: 'Electrical Engineering',
     url: '/electrique',
-    iconComponent: { name: 'cilBolt' },
+    icon: 'cilBolt',
   },
   {
-    name: 'Ingénierie telecommunication',
+    name: 'Telecommunication Engineering',
     url: '/telecom',
-    iconComponent: { name: 'cilRss' },
+    icon: 'cilRss' ,
   },
   {
     title: true,
     name: 'EGES'
   },
   {
-    name: "Gestion de l'ingénierie",
+    name: "Engineering Management",
     url: '/gestion',
-    iconComponent: { name: 'cilChartLine' },
+    icon: 'cilChartLine',
   },
 ];

@@ -22,7 +22,6 @@ export class DefaultHeaderComponent extends HeaderComponent {
   message!:string;
   ngOnInit():void{
     this.data.currentMessage.subscribe(message=>this.message=message);
-    alert(this.message)
   }
   gotoprofilespage(){
     this.router.navigate(['home/profiles'])

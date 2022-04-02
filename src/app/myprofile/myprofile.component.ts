@@ -16,8 +16,12 @@ export class MyprofileComponent {
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
+  private m!: string;
 
   constructor(private router:Router) {}
+  ngOnInit():void{
+    alert(this.m)
+  }
   gotomyprofile(){
     this.router.navigate(['myprofile/informations_generales'])
   };
@@ -39,6 +43,10 @@ export class MyprofileComponent {
   gotoexperience(){
     this.router.navigate(['myprofile/experience'])
   }
+  toggle(event: Event):void{
+    let elementId:string=(event.target as Element).id;
+     this.m=elementId;
+   };
 
 
 }
