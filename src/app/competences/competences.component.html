@@ -1,42 +1,95 @@
-<div>
-  <br><br>
-  <c-row>
-    <c-col [xs]>
-      <label cLabel for="name">Name</label>
-      <input id="name" cFormControl placeholder="" />
-    </c-col>
-    <c-col [xs]>
-      <label cLabel for="field">Field</label>
-      <input id="field" cFormControl placeholder="" />
-    </c-col>
-    <c-col [xs]>
-      <label cLabel for="authority">Authority</label>
-      <input id="authority" cFormControl placeholder="" />
-    </c-col>
-  </c-row>
+<div *ngIf="certification">
   <br>
-  <c-row>
-    <c-col [xs]>
-      <label cLabel for="issuedate">Issue Date</label>
-      <input id="issuedate" cFormControl type="date"/>
-    </c-col>
-    <c-col [xs]>
-      <label cLabel for="expirationdate">Expiration Date</label>
-      <input id="expirationdate" cFormControl  type="date"/>
-    </c-col>
-  </c-row>
-  <br>
-  <div cFormFloating>
-    <p>Feel free to add any comment (Ex: why you felt like learning this skill):</p>
-    <textarea
-      [ngStyle]="{ 'height.px': 150 }"
-      cFormControl
-      id="CommentEducation">
+  <h4>Saved Certifications/Skills: </h4>
+  <div *ngFor="let cert of certification">
+    <br><hr><br>
+    <c-row>
+      <c-col [xs]>
+        <label cLabel for="name">Name</label>
+        <input id="name" cFormControl disabled cBgColor="white" value={{cert.name}} />
+      </c-col>
+      <c-col [xs]>
+        <label cLabel for="field">Field</label>
+        <input id="field" cFormControl disabled cBgColor="white" value={{cert.field}} />
+      </c-col>
+      <c-col [xs]>
+        <label cLabel for="authority">Authority</label>
+        <input id="authority" cFormControl disabled cBgColor="white" value={{cert.authority}} />
+      </c-col>
+    </c-row>
+    <br>
+    <c-row>
+      <c-col [xs]>
+        <label cLabel for="issuedate">Issue Date</label>
+        <input disabled cBgColor="white" value={{cert.issueDate}} id="issuedate" cFormControl type="date"/>
+      </c-col>
+      <c-col [xs]>
+        <label cLabel for="expirationdate">Expiration Date</label>
+        <input disabled cBgColor="white" value={{cert.expirationDate}} id="expirationdate" cFormControl  type="date"/>
+      </c-col>
+    </c-row>
+    <br>
+    <div cFormFloating>
+      <p>Feel free to add any comment (Ex: why you felt like learning this skill):</p>
+      <textarea
+        disabled cBgColor="white" value={{cert.comment}}
+        [ngStyle]="{ 'height.px': 150 }"
+        cFormControl
+        id="CommentEducation">
   </textarea>
+    </div>
   </div>
 </div>
+
+
 <br>
-<c-col [xs]="12">
-  <button cButton type="submit">Update</button>
-</c-col>
+<hr>
+<br>
+<form [formGroup]="certificationForm" (ngSubmit)="addCertification()">
+  <br>
+  <h4>Add New Certification/Skill:</h4>
+  <div>
+    <br><br>
+    <c-row>
+      <c-col [xs]>
+        <label cLabel for="name">Name</label>
+        <input formControlName="name" id="name" cFormControl placeholder="" />
+      </c-col>
+      <c-col [xs]>
+        <label cLabel for="field">Field</label>
+        <input formControlName="field" id="field" cFormControl placeholder="" />
+      </c-col>
+      <c-col [xs]>
+        <label cLabel for="authority">Authority</label>
+        <input formControlName="authority" id="authority" cFormControl placeholder="" />
+      </c-col>
+    </c-row>
+    <br>
+    <c-row>
+      <c-col [xs]>
+        <label cLabel for="issuedate">Issue Date</label>
+        <input formControlName="issueDate" id="issuedate" cFormControl type="date"/>
+      </c-col>
+      <c-col [xs]>
+        <label cLabel for="expirationdate">Expiration Date</label>
+        <input formControlName="expirationDate" id="expirationdate" cFormControl  type="date"/>
+      </c-col>
+    </c-row>
+    <br>
+    <div cFormFloating>
+      <p>Feel free to add any comment (Ex: why you felt like learning this skill):</p>
+      <textarea
+        formControlName="comment"
+        [ngStyle]="{ 'height.px': 150 }"
+        cFormControl
+        id="CommentEducation">
+  </textarea>
+    </div>
+  </div>
+  <br>
+  <c-col [xs]="12">
+    <button cButton type="submit">Add</button>
+  </c-col>
+
+</form>
 <br>

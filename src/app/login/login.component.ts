@@ -5,7 +5,6 @@ import {HttpClient} from "@angular/common/http";
 import {DataService} from "../data.service";
 import {AuthenticationService} from "../_services";
 import {Role} from "../models/role";
-import {userIdService} from "../user-id.service";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,7 @@ export class LoginComponent {
   loading = false;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient,
-              private userId: userIdService, private authService: AuthenticationService) {
+              private authService: AuthenticationService) {
     // redirect to profile if already logged in
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
@@ -45,7 +44,6 @@ export class LoginComponent {
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
       user => {
         console.log('Login success - user info', user);
-        this.userId.changeMessage(user.userId)
         if (user) {
           // navigate to profiles according to role
           this.naviagateToProfileAccordingToRole(user);

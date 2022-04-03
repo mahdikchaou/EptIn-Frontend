@@ -134,8 +134,8 @@
     {
       "firstName": "Imen",
       "lastName": "Tounsi",
-      "gender": "2",
-      "birthday": "2000-11-05",
+      "gender": "Female",
+      "birthday": "2022-04-09",
       "country": "Tunisia",
       "city": "Sfax",
       "phoneNumber": null,
@@ -145,31 +145,45 @@
         {
           "id": 1,
           "name": "Aerospace Engineering"
-        },
-        {
-          "name": "Energy engineering"
         }
       ],
       "id": 2
     }
   ],
   "education": [
-    {
-      "prepa": "ipeis",
-      "userId": 1
-    }
   ],
   "certification": [
     {
-      "userId": 1,
-      "name": "java project",
-      "authority": "me"
+      "name": "eg",
+      "field": "erge",
+      "authority": "eerg",
+      "issueDate": "2022-04-16",
+      "expirationDate": "2022-04-08",
+      "comment": "rfr\"e",
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "name": "eg",
+      "field": "erge",
+      "authority": "eerg",
+      "issueDate": "2022-04-16",
+      "expirationDate": "2022-04-08",
+      "comment": "rfr\"e",
+      "userId": 2,
+      "id": 2
     }
   ],
   "experience": [
     {
-      "userId": 1,
-      "companyName": "Mercedes"
+      "companyName": "Mercedes",
+      "city": "Munich",
+      "country": "Germany",
+      "employmentType": "Contract",
+      "jobTitle": "Chef of the Department",
+      "comment": "good money",
+      "userId": 2,
+      "id": 1
     }
   ],
   "skill": [

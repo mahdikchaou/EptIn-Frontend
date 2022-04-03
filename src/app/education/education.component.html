@@ -1,57 +1,69 @@
+<form *ngIf="education" [formGroup]="EducationForm" (ngSubmit)="updateEducation()">
 <br>
-
 <c-row>
 <c-col [xs]>
-  <label cLabel for="AdmissionDate">Date d'admission à l'EPT</label>
-  <input id="AdmissionDate" aria-label="AdmissionDate" cFormControl type="date"/>
+  <label cLabel for="AdmissionDate">EPT Admission Date</label>
+  <input id="AdmissionDate" aria-label="AdmissionDate" cFormControl type="date" placeholder={{education.admissionDate}} formControlName="admissionDate"/>
 </c-col>
 <c-col [xs]>
-  <label cLabel for="GraduationDate">Date d'obtention du diplôme</label>
-  <input id="GraduationDate" aria-label="GraduationDate" cFormControl  type="date"/>
+  <label cLabel for="GraduationDate">Graduation Date</label>
+  <input id="GraduationDate" aria-label="GraduationDate" cFormControl  type="date" placeholder={{education.graduationDate}} formControlName="graduationDate"/>
 </c-col>
 </c-row>
 <br>
 <c-row>
   <c-col [xs]>
-    <label cLabel for="Prépa">Prépa</label>
-    <input id="Prépa" aria-label="Prépa" cFormControl placeholder="Prépa" />
+    <label cLabel for="Prépa">Prepa</label>
+    <input id="Prépa" aria-label="Prépa" cFormControl placeholder={{education.prepa}} formControlName="prepa" />
   </c-col>
   <c-col [md]="6">
     <label cLabel for="Option">Option</label>
-    <select cSelect id="Option">
-      <option>Choose...</option>
-      <option value="Sisy">Sisy</option>
-      <option value="Sysco">Sysco</option>
-      <option value="Eges">Eges</option>
+    <select formControlName="option" cSelect id="Option">
+      <option>{{education.option}}</option>
+      <option value="SISY">Sisy</option>
+      <option value="SySco">Sysco</option>
+      <option value="EGES">Eges</option>
     </select>
   </c-col>
 </c-row>
+  <br>
+  <c-row>
+    <c-col [xs]>
+      <label cLabel for="pfeField">Pfe Field:</label>
+      <input id="pfeField" cFormControl placeholder={{education.pfeField}} formControlName="pfeField" />
+    </c-col>
+    <c-col [xs]>
+      <label cLabel for="pfeUniversity">University/Company:</label>
+      <input id="pfeUniversity"  cFormControl placeholder={{education.pfeField}} formControlName="pfeField" />
+    </c-col>
+  </c-row>
 <br>
 <c-row>
   <c-col [xs]>
     <label cLabel for="masterField">Master field (if you have a master degree)</label>
-    <input id="masterField" cFormControl placeholder="" />
+    <input id="masterField" cFormControl placeholder={{education.masterField}} formControlName="masterField" />
   </c-col>
   <c-col [xs]>
     <label cLabel for="masterUniversity">University</label>
-    <input id="masterUniversity"  cFormControl placeholder="" />
+    <input id="masterUniversity"  cFormControl placeholder={{education.masterUniversity}} formControlName="masterUniversity" />
   </c-col>
 </c-row>
 <br>
 <c-row>
   <c-col [xs]>
     <label cLabel for="PhDField">PhD field (if you have a PhD)</label>
-    <input id="PhDField" cFormControl placeholder="" />
+    <input id="PhDField" cFormControl placeholder={{education.phdField}} formControlName="phdField" />
   </c-col>
   <c-col [xs]>
     <label cLabel for="PhDUniversity">University</label>
-    <input id="PhDUniversity"  cFormControl placeholder="" />
+    <input id="PhDUniversity"  cFormControl placeholder={{education.phdUniversity}} formControlName="phdUniversity" />
   </c-col>
 </c-row>
 <br>
 <div cFormFloating>
   <p>Tell us all about your education experience (Engineering degree, Master degree and PhD):</p>
 <textarea
+  placeholder={{education.comment}} formControlName="comment"
   [ngStyle]="{ 'height.px': 150 }"
   cFormControl
   id="CommentEducation">
@@ -62,4 +74,4 @@
   <button cButton type="submit">Update</button>
 </c-col>
 <br>
-
+</form>

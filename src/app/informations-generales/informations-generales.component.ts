@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Informationsgenerales} from "../models/Informationsgenerales";
 import {InformationsGeneralesService} from "./informations-generales.service";
-import {userIdService} from "../user-id.service";
-import {FormGroup, FormBuilder} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {AuthenticationService} from "../_services";
 
 
 @Component({
@@ -12,13 +12,12 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: './informations-generales.component.html',
   styleUrls: ['./informations-generales.component.scss']
 })
-export class InformationsGeneralesComponent implements OnInit{
-  message!:string;
+export class InformationsGeneralesComponent implements OnInit {
   public infoGnForm !: FormGroup;
 
   items = [
-    {id:1, name: 'Aerospace Engineering'},
-    {id:2, name: 'Automobile Engineering'},
+    {id: 1, name: 'Aerospace Engineering'},
+    {id: 2, name: 'Automobile Engineering'},
     {name: 'Civil Engineering'},
     {name: 'Energy engineering'},
     {name: 'Mechanical Engineering'},
@@ -30,62 +29,75 @@ export class InformationsGeneralesComponent implements OnInit{
     {name: 'Telecommunication Engineering'},
     {name: 'Engineering Management'},
   ];
-  selected=[
+  selected = [
     {name: 'Aerospace Engineering'},
-    {name: 'Automobile Engineering'},  ];
+    {name: 'Automobile Engineering'},];
+
   infogn!: Informationsgenerales;
 
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-  constructor(private formBuilder: FormBuilder, private router:Router, private infognservice: InformationsGeneralesService,private userId: userIdService, private HttpClient:HttpClient,) {}
-  gotomyprofile(){
+
+  currentUser = this.authService.currentUserValue;
+
+
+  constructor(private formBuilder: FormBuilder, private router: Router,
+              private infognservice: InformationsGeneralesService,
+              private authService: AuthenticationService, private HttpClient: HttpClient) {
+  }
+
+  gotomyprofile() {
     this.router.navigate(['myprofile/informations_generales'])
   };
-  gotocompetences(){
+
+  gotocompetences() {
     this.router.navigate(['myprofile/competences'])
   };
-  gotocree(){
+
+  gotocree() {
     this.router.navigate(['myprofile/offres_crees'])
   };
-  gotocreer(){
+
+  gotocreer() {
     this.router.navigate(['myprofile/creer_offre'])
   };
-  gotoeducation(){
+
+  gotoeducation() {
     this.router.navigate(['myprofile/education'])
   };
-  gotopostule(){
+
+  gotopostule() {
     this.router.navigate(['myprofile/applied'])
   };
-  gotoexperience(){
+
+  gotoexperience() {
     this.router.navigate(['myprofile/experience'])
   }
 
   ngOnInit(): void {
-    this.userId.currentMessage.subscribe(message => this.message = message);
-    this.infognservice.getInformationsGenerales(this.message).subscribe(data1 => {
+    this.infoGnForm = this.formBuilder.group({
+      firstName: [''],
+      lastName: [''],
+      gender: [''],
+      birthday: [''],
+      country: [''],
+      city: [''],
+      phoneNumber: [],
+      email: [''],
+      password: [''],
+      field: [''],
+    })
+    this.infognservice.getInformationsGenerales(this.currentUser.userId.toString()).subscribe(data1 => {
       this.infogn = data1;
     });
-    this.infoGnForm=this.formBuilder.group({
-      firstName:[''],
-      lastName:[''],
-      gender:[''],
-      birthday:[''],
-      country:[''],
-      city:[''],
-      phoneNumber:[],
-      email:[''],
-      password:[''],
-      field:[''],
-    })
-
   }
-  updateInfoGn(){
-    let   url:string ="http://localhost:3000/user/"+this.message;
+
+  updateInfoGn() {
+    let url: string = "http://localhost:3000/user/" + this.currentUser.userId.toString();
     this.HttpClient.put<any>(url, this.infoGnForm.value)
-      .subscribe(res=>{
-        alert("Signup Successful");
-      }, err=>{
+      .subscribe(res => {
+      }, err => {
         alert("Something went wrong, try again")
       })
   }

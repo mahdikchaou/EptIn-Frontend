@@ -103,7 +103,7 @@ const routes: Routes = [
         path:'competences',
         component:CompetencesComponent,
         data: {
-          title: 'Competences'
+          title: 'Skills and Certifications'
         },
       },
       {

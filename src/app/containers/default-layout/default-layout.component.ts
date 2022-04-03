@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import { navItems } from './_nav';
-import {userIdService} from "../../user-id.service";
 
 @Component({
   selector: 'app-default-layout',

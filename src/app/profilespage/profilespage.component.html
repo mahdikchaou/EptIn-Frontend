@@ -89,31 +89,34 @@
 </style>
 <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-            <div class="well profile_view" *ngFor="let profiles of profiles"><c-row>
-                <c-col [xs]>
-                <div class="left col-xs-7" style="padding-left: 2rem">
-                  <p><strong>Full Name: </strong> {{profiles.firstName}} {{profiles.lastName}}</p>
-                  <br>
-                  <p><strong>Profession: </strong> Web Designer / UI. </p>
-                  <br>
-                    <p><i class="fa fa-phone"></i> <strong>Phone Number</strong>: {{profiles.phoneNumber}}</p>
-                  <p><strong>Email: </strong>{{profiles.email}} </p>
-                  <br>
-                  <p><strong>Lives in </strong>{{profiles.city}}, {{profiles.country.toUpperCase()}}  </p>
+<div *ngIf="profiles">
+  <div  class="well profile_view" *ngFor="let profiles of profiles"><c-row>
+    <c-col [xs]>
+      <div class="left col-xs-7" style="padding-left: 2rem">
+        <p><strong>Full Name: </strong> {{profiles.firstName}} {{profiles.lastName}}</p>
+        <br>
+        <p><strong>Profession: </strong> Web Designer / UI. </p>
+        <br>
+        <p><i class="fa fa-phone"></i> <strong>Phone Number</strong>: {{profiles.phoneNumber}}</p>
+        <p><strong>Email: </strong>{{profiles.email}} </p>
+        <br>
+        <p><strong>Lives in </strong>{{profiles.city}}, {{profiles.country.toUpperCase()}}  </p>
 
 
-                </div>
-                </c-col><c-col [xs]>
-                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" style="padding-left: 16rem">
-              </c-col>
-              </c-row><c-row>
-                <div style="padding-bottom: 2rem; padding-left: 2rem">
-                  <button class="btn btn-primary btn-xs" (click)="gotoProfile() ; toggle($event)" id={{profiles.id}}>
-                    <i class="fa fa-user"></i> View Profile
-                  </button>
-                </div>
-            </c-row>
-            </div>
+      </div>
+    </c-col><c-col [xs]>
+    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" style="padding-left: 16rem">
+  </c-col>
+  </c-row><c-row>
+    <div style="padding-bottom: 2rem; padding-left: 2rem">
+      <button class="btn btn-primary btn-xs" (click)="gotoProfile() ; toggle($event)" id={{profiles.id}}>
+        <i class="fa fa-user"></i> View Profile
+      </button>
+    </div>
+  </c-row>
+  </div>
+</div>
+
 
 
 

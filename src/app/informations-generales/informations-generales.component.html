@@ -1,4 +1,4 @@
-<form cForm [formGroup]="infoGnForm" (ngSubmit)="updateInfoGn()"><br>
+<form  *ngIf= "infogn" cForm [formGroup]="infoGnForm" (ngSubmit)="updateInfoGn()"><br>
   <c-row>
     <div class=[xs]>
       <!-- Profile picture card-->
