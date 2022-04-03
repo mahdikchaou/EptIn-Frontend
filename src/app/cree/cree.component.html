@@ -1,1 +1,40 @@
+<br>
+<div  *ngIf="offers" class="row justify-content-center">
+  <div class="col-12">
+    <div class="section-title text-center mb-4 pb-2">
+      <h4 class="title mb-4">Created Offers</h4>
+      <p class="text-muted para-desc mx-auto mb-0">You can delete expired offers</p>
+    </div>
+  </div><!--end col-->
+</div><!--end row-->
+<c-row *ngFor="let offers of offers">
+  <c-col>
+    <div>
+      <div class="card service-wrapper rounded border-0 shadow p-4">
+        <c-row>
+          <c-col [xs]>
+            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+              <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="2em"><rect width="20" height="15" x="2" y="3" class="uim-tertiary" rx="3"></rect><path class="uim-primary" d="M16,21H8a.99992.99992,0,0,1-.832-1.55469l4-6a1.03785,1.03785,0,0,1,1.66406,0l4,6A.99992.99992,0,0,1,16,21Z"></path></svg></span>
+            </div>
+          </c-col>
+          <c-col [xs]>
+            <p style="font-size: 1.5rem">{{offers.name}}, &nbsp;&nbsp;&nbsp;&nbsp;Offered by {{offers.authority}}</p>
+          </c-col>
+        </c-row>
+        <div class="content mt-4">
+          <h5 class="title">{{offers.type.toUpperCase()}}</h5>
+          <p class="text-muted mt-3 mb-0"> {{offers.type}} in  <span *ngFor="let f of offers.field"> {{f.name}}, </span> in {{offers.city.toLocaleLowerCase()}}, {{offers.country.toUpperCase()}} </p>
+          <p class="text-muted mt-3 mb-0"> Starts in {{offers.startDate}} and ends in {{offers.endDate}} </p>
+          <div class="mt-3">
+            <button (click)="toggle($event)" cBgColor="white" cBorder="false" cTextColor="primary" id={{offers.id}}>Delete Offer </button>
+          </div>
+        </div>
+        <div class="big-icon h1 text-custom">
+          <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em"><rect width="20" height="15" x="2" y="3" class="uim-tertiary" rx="3"></rect><path class="uim-primary" d="M16,21H8a.99992.99992,0,0,1-.832-1.55469l4-6a1.03785,1.03785,0,0,1,1.66406,0l4,6A.99992.99992,0,0,1,16,21Z"></path></svg></span>
+        </div>
+      </div>
+      <br> <br>
+    </div>
 
+  </c-col>
+</c-row>

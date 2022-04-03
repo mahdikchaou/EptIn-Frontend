@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {CreeService} from "./cree.service";
+import {AuthenticationService} from "../_services";
+import {Offre} from "../models/offre";
+import {DataService} from "../data.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-cree',
@@ -7,13 +12,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./cree.component.scss']
 })
 export class CreeComponent{
-
-
+  currentUser = this.authService.currentUserValue;
+  offers!:Offre[];
 
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-  constructor(private router:Router) {}
+  constructor(private httpClient:HttpClient, private router:Router, private cree:CreeService, private authService: AuthenticationService) {}
+
   gotomyprofile(){
     this.router.navigate(['myprofile/informations_generales'])
   };
@@ -34,6 +40,21 @@ export class CreeComponent{
   };
   gotoexperience(){
     this.router.navigate(['myprofile/experience'])
+  };
+  deleteOffer(id:string){
+    let url="http://localhost:3000/offres/"+id;
+    this.httpClient.delete(url).subscribe(data =>{
+       alert("Task successfully done!")
+    })
+  }
+  toggle(event: Event):void{
+    let elementId:string=(event.target as Element).id;
+    this.deleteOffer(elementId)
+  };
+  ngOnInit():void{
+    this.cree.getUserOffers(this.currentUser.userId.toString()).subscribe(data2=>{
+      this.offers=data2;
+    });
   }
 
 }
