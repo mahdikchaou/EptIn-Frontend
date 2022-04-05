@@ -14,21 +14,21 @@ import {AuthenticationService} from "../_services";
 export class CreerComponent{
   public createOfferForm !: FormGroup;
   items = [
-    {name:'Sysco'},
-    {name:'SYSI'},
-    {name:'EGES'},
-    {name: 'Aerospace Engineering'},
-    {name: 'Automobile Engineering'},
-    {name: 'Civil Engineering'},
-    {name: 'Energy engineering'},
-    {name: 'Mechanical Engineering'},
-    {name: 'Industrial Engineering'},
-    {name: 'Nuclear Engineering'},
-    {name: 'Hydraulic Engineering'},
-    {name: 'Computer Engineering'},
-    {name: 'Electrical Engineering'},
-    {name: 'Telecommunication Engineering'},
-    {name: 'engineering Management'},
+    {name:'sysco'},
+    {name:'sysi'},
+    {name:'eges'},
+    {name: 'aerospace engineering'},
+    {name: 'automobile engineering'},
+    {name: 'civil engineering'},
+    {name: 'energy engineering'},
+    {name: 'mechanical engineering'},
+    {name: 'industrial engineering'},
+    {name: 'nuclear engineering'},
+    {name: 'hydraulic engineering'},
+    {name: 'computer engineering'},
+    {name: 'electrical engineering'},
+    {name: 'telecommunication engineering'},
+    {name: 'engineering management'},
 
   ];
   public perfectScrollbarConfig = {

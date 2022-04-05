@@ -25,7 +25,7 @@
           "name": "Aerospace Engineering"
         },
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         },
         {
           "name": "Computer Engineering"
@@ -50,7 +50,7 @@
           "name": "Aerospace Engineering"
         },
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         },
         {
           "name": "Computer Engineering"
@@ -72,12 +72,12 @@
     {
       "field": [
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         }
       ],
       "name": "",
       "authority": "",
-      "type": "stage",
+      "type": "pfe",
       "comment": "",
       "country": "",
       "city": "",
@@ -91,12 +91,12 @@
     {
       "field": [
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         }
       ],
       "name": "",
       "authority": "",
-      "type": "stage",
+      "type": "pfe",
       "comment": "",
       "country": "",
       "city": "",
@@ -110,7 +110,7 @@
     {
       "field": [
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         }
       ],
       "name": "",
@@ -129,7 +129,7 @@
     {
       "field": [
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         }
       ],
       "name": "",
@@ -150,10 +150,10 @@
     {
       "field": [
         {
-          "name": "Automobile Engineering"
+          "name": "automobile engineering"
         },
         {
-          "name": "Mechanical Engineering"
+          "name": "mechanical engineering"
         }
       ],
       "firstName": "Mahdi",

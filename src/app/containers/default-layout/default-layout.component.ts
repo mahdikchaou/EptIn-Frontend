@@ -32,7 +32,7 @@ export class DefaultLayoutComponent implements OnInit {
   toggle(item:any) {
     item.isNavItemSelected=!item.isNavItemSelected;
     const key=item.href;
-    const value=item.name;
+    const value=item.name.toLowerCase();
     let x: any = {};
     x[key] = value;
     let isKeyExist = false;

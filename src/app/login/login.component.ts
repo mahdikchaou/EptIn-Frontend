@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {DataService} from "../data.service";
 import {AuthenticationService} from "../_services";
 import {Role} from "../models/role";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -24,10 +24,9 @@ export class LoginComponent {
     if (currentUser) {
       // navigate to profiles according to role
       this.naviagateToProfileAccordingToRole(currentUser);
-
-
     }
   }
+
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: [''],
@@ -41,18 +40,22 @@ export class LoginComponent {
 
   login() {
     this.loading = true;
-    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
-      user => {
-        console.log('Login success - user info', user);
-        if (user) {
-          // navigate to profiles according to role
-          this.naviagateToProfileAccordingToRole(user);
-        }
-      },
-      error => {
-        this.loading = false;
-        this.error = 'Invalid email or password';
-      });
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
+      .subscribe(data => {
+          if (data) {
+            data.subscribe((user: any) => {
+              console.log('user info', user);
+              if (user) {
+                // navigate to profiles according to role
+                this.naviagateToProfileAccordingToRole(user);
+              }
+            });
+          }
+        },
+        error => {
+          this.loading = false;
+          this.error = 'Invalid email or password';
+        });
   }
 
 

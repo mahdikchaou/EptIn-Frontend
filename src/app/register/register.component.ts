@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from "@angular/forms"
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms"
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../_services";
@@ -11,31 +11,32 @@ import {AuthenticationService} from "../_services";
 })
 export class RegisterComponent {
   public registerForm !: FormGroup;
-  constructor(private authService:AuthenticationService, private formBuilder: FormBuilder, private http:HttpClient, private router: Router) { }
-  currentUser = this.authService.currentUserValue;
-  ngOnInit(): void{
-    this.registerForm=this.formBuilder.group({
-      firstName:[''],
-      lastName:[''],
-      gender:[''],
-      birthday:[''],
-      country:[''],
-      city:[''],
-      phoneNumber:[],
-      email:[''],
-      password:[''],
-      role:[''],
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router,
+              private authService: AuthenticationService) {
+  }
+
+  ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+      firstName: [''],
+      lastName: [''],
+      gender: [''],
+      birthDate: [''],
+      country: [''],
+      city: [''],
+      phoneNumber: [],
+      email: [''],
+      password: [''],
+      role: ['']
     })
   }
-  register(){
-     this.http.post<any>("http://localhost:3000/user", this.registerForm.value)
-       .subscribe(res=>{
-         alert("Signup Successful");
-         this.registerForm.reset();
-         this.router.navigate(['myprofile/informations_generales'])
-       }, err=>{
-         alert("Something went wrong, try again")
-       });
 
+  register() {
+    this.authService.register(this.registerForm.value).subscribe(res => {
+      alert("Signup Successful");
+      this.router.navigate(['']);
+    }, err => {
+      alert("Something went wrong, try again")
+    })
   }
 }
