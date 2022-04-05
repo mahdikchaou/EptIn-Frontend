@@ -13,6 +13,7 @@ import{Certification} from "../models/certification";
   styleUrls: ['./view-profile.component.scss']
 })
 export class ViewProfileComponent implements OnInit {
+  items = [1, 2, 3, 4];
 
   informationsGenerales!:Informationsgenerales;
   education!:education[];

@@ -6,7 +6,7 @@
       </div>
     </div><!--end col-->
   </div><!--end row-->
-<c-row *ngFor="let offres of offres">
+<c-row *ngFor="let offres of offres | filtermulti:filterArray">
   <c-col>
     <div>
       <div class="card service-wrapper rounded border-0 shadow p-4">
@@ -25,7 +25,7 @@
           <p class="text-muted mt-3 mb-0"> {{offres.type}} in  <span *ngFor="let f of offres.field"> {{f.name}}, </span> in {{offres.city.toLocaleLowerCase()}}, {{offres.country.toUpperCase()}} </p>
           <p class="text-muted mt-3 mb-0"> Starts in {{offres.startDate}} and ends in {{offres.endDate}} </p>
           <div class="mt-3">
-            <button (click)="gotoOffer(); toggle($event)" cBgColor="white" cBorder="false" cTextColor="primary" id={{offres.id}}>Read More </button>
+            <button (click)="gotoOffer(); toggle($event)" cBgColor="white" cBorder="false" cTextColor="primary" id={{offres.id}} class="btn-2">Read More </button>
           </div>
         </div>
         <div class="big-icon h1 text-custom">

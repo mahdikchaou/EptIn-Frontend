@@ -6,6 +6,8 @@ import {Skill} from "../models/skill";
 import {AuthenticationService} from "../_services";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-competences',
@@ -16,6 +18,8 @@ export class CompetencesComponent implements OnInit {
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
+  closeResult = '';
+
   certification!: Certification[];
   skill!: Skill[];
   currentUser = this.authService.currentUserValue;
@@ -23,7 +27,26 @@ export class CompetencesComponent implements OnInit {
   public certificationForm!: FormGroup
 
 
-  constructor(private HttpClient: HttpClient, private formBuilder: FormBuilder, private authService: AuthenticationService, private router: Router, private competencesService: CompetencesService) {
+  constructor(private modalService: NgbModal, private HttpClient: HttpClient, private formBuilder: FormBuilder, private authService: AuthenticationService, private router: Router, private competencesService: CompetencesService) {
+  }
+  open(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+      window.location.reload()
+
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
   ngOnInit(): void {
@@ -41,13 +64,13 @@ export class CompetencesComponent implements OnInit {
       issueDate: [''],
       expirationDate: [''],
       comment: [''],
-      userId: [this.currentUser.userId],
+      userId: this.currentUser.userId,
       id: []
     })
     this.skillForm = this.formBuilder.group({
       name: [''],
       comment: [''],
-      userId: [this.currentUser.userId],
+      userId: this.currentUser.userId,
       id: []
     })
   }
@@ -85,7 +108,6 @@ export class CompetencesComponent implements OnInit {
     this.HttpClient.post<any>("http://localhost:3000/certification", this.certificationForm.value)
       .subscribe(res => {
         this.certificationForm.reset();
-        alert("good")
       }, err => {
         alert("Something went wrong, try again")
       })
@@ -94,7 +116,7 @@ export class CompetencesComponent implements OnInit {
   addSkill() {
     this.HttpClient.post<any>("http://localhost:3000/skill", this.skillForm.value)
       .subscribe(res => {
-        this.certificationForm.reset();
+        this.skillForm.reset();
       }, err => {
         alert("Something went wrong, try again")
       })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder} from "@angular/forms"
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {AuthenticationService} from "../_services";
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,8 @@ import {Router} from "@angular/router";
 })
 export class RegisterComponent {
   public registerForm !: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http:HttpClient, private router: Router) { }
+  constructor(private authService:AuthenticationService, private formBuilder: FormBuilder, private http:HttpClient, private router: Router) { }
+  currentUser = this.authService.currentUserValue;
   ngOnInit(): void{
     this.registerForm=this.formBuilder.group({
       firstName:[''],
@@ -22,6 +24,7 @@ export class RegisterComponent {
       phoneNumber:[],
       email:[''],
       password:[''],
+      role:[''],
     })
   }
   register(){
@@ -32,6 +35,7 @@ export class RegisterComponent {
          this.router.navigate(['myprofile/informations_generales'])
        }, err=>{
          alert("Something went wrong, try again")
-       })
+       });
+
   }
 }

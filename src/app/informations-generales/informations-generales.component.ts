@@ -16,8 +16,8 @@ export class InformationsGeneralesComponent implements OnInit {
   public infoGnForm !: FormGroup;
 
   items = [
-    {id: 1, name: 'Aerospace Engineering'},
-    {id: 2, name: 'Automobile Engineering'},
+    {name: 'Aerospace Engineering'},
+    {name: 'Automobile Engineering'},
     {name: 'Civil Engineering'},
     {name: 'Energy engineering'},
     {name: 'Mechanical Engineering'},
@@ -29,9 +29,6 @@ export class InformationsGeneralesComponent implements OnInit {
     {name: 'Telecommunication Engineering'},
     {name: 'Engineering Management'},
   ];
-  selected = [
-    {name: 'Aerospace Engineering'},
-    {name: 'Automobile Engineering'},];
 
   infogn!: Informationsgenerales;
 
@@ -87,9 +84,25 @@ export class InformationsGeneralesComponent implements OnInit {
       email: [''],
       password: [''],
       field: [''],
+      role:[''],
     })
     this.infognservice.getInformationsGenerales(this.currentUser.userId.toString()).subscribe(data1 => {
       this.infogn = data1;
+      let form= {
+        firstName: this.infogn.firstName,
+        lastName: this.infogn.lastName,
+        gender: this.infogn.gender,
+        birthday: this.infogn.birthday,
+        country: this.infogn.country,
+        city: this.infogn.city,
+        phoneNumber:this.infogn.phoneNumber,
+        email: this.infogn.email,
+        password: this.infogn.password,
+        field: [''],
+        role:[this.infogn.role],
+      }
+      this.infoGnForm.setValue(form);
+
     });
   }
 

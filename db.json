@@ -3,111 +3,147 @@
     {
       "field": [
         {
-          "id": 5,
-          "name": "Mechanical Engineering"
-        },
-        {
-          "id": 4,
-          "name": "Energy engineering"
-        },
-        {
-          "id": 2,
-          "name": "Automobile Engineering"
-        },
-        {
-          "id": 6,
-          "name": "Industrial Engineering"
-        }
-      ],
-      "name": "Germnay car company association",
-      "authority": "BMW",
-      "type": "stage",
-      "comment": "For 2nd grade SYSCO student.",
-      "country": "Tunisia",
-      "city": "Tunis",
-      "authorityPhoneNumber": "70 837 355",
-      "authorityEmail": "https://www.bmw-tunisia.com/fr/index.html",
-      "startDate": "2022-07-01",
-      "endDate": "2022-07-31",
-      "id": 1
-    },
-    {
-      "field": [
-        {
-          "id": 11,
-          "name": "Telecommunication Engineering"
+          "name": "EGES"
         }
       ],
       "name": "",
       "authority": "jfg",
       "type": "master",
-      "comment": "gezg",
-      "country": "Bahrain",
-      "city": "treg",
-      "authorityPhoneNumber": "534",
-      "authorityEmail": "grt",
-      "startDate": "2022-03-26",
-      "endDate": "2022-04-08",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": null,
+      "authorityEmail": "",
+      "startDate": "",
+      "endDate": "",
+      "userId": 2,
       "id": 2
     },
     {
       "field": [
         {
-          "id": 2,
-          "name": "Automobile Engineering"
+          "name": "Aerospace Engineering"
+        },
+        {
+          "name": "Mechanical Engineering"
+        },
+        {
+          "name": "Computer Engineering"
         }
       ],
       "name": "",
-      "authority": "regaeafz'r",
-      "type": "phd",
-      "comment": "zef",
-      "country": "Barbados",
-      "city": "zar",
-      "authorityPhoneNumber": "454",
-      "authorityEmail": "fzaf",
-      "startDate": "2022-03-12",
-      "endDate": "2022-04-09",
+      "authority": "fvrv",
+      "type": "master",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": "zva",
+      "authorityEmail": "zsv",
+      "startDate": "",
+      "endDate": "",
+      "userId": 3,
       "id": 3
     },
     {
       "field": [
         {
-          "name": "Automobile Engineering"
+          "name": "Aerospace Engineering"
         },
         {
           "name": "Mechanical Engineering"
+        },
+        {
+          "name": "Computer Engineering"
         }
       ],
       "name": "",
-      "authority": "zsd",
+      "authority": "fvrv",
       "type": "master",
-      "comment": "efv",
-      "country": "Bahamas",
-      "city": "zfzf",
-      "authorityPhoneNumber": "537",
-      "authorityEmail": "erg",
-      "startDate": "2022-03-30",
-      "endDate": "2022-03-17",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": "zva",
+      "authorityEmail": "zsv",
+      "startDate": "",
+      "endDate": "",
+      "userId": 3,
       "id": 4
     },
     {
       "field": [
         {
-          "$ngOptionLabel": "mahdi",
-          "disabled": false
+          "name": "Mechanical Engineering"
         }
       ],
       "name": "",
-      "authority": "cherni",
+      "authority": "",
       "type": "stage",
-      "comment": "iouh",
-      "country": "Australia",
-      "city": "uhl",
-      "authorityPhoneNumber": "$587",
-      "authorityEmail": "ijjlm",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": null,
+      "authorityEmail": "",
       "startDate": "",
       "endDate": "",
+      "userId": 3,
       "id": 5
+    },
+    {
+      "field": [
+        {
+          "name": "Mechanical Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "",
+      "type": "stage",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": null,
+      "authorityEmail": "",
+      "startDate": "",
+      "endDate": "",
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "field": [
+        {
+          "name": "Mechanical Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "",
+      "type": "phd",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": null,
+      "authorityEmail": "",
+      "startDate": "",
+      "endDate": "",
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "field": [
+        {
+          "name": "Mechanical Engineering"
+        }
+      ],
+      "name": "",
+      "authority": "",
+      "type": "phd",
+      "comment": "",
+      "country": "",
+      "city": "",
+      "authorityPhoneNumber": null,
+      "authorityEmail": "",
+      "startDate": "",
+      "endDate": "",
+      "userId": 3,
+      "id": 8
     }
   ],
   "user": [
@@ -148,9 +184,78 @@
         }
       ],
       "id": 2
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Cherni",
+      "gender": "",
+      "birthday": "",
+      "country": "",
+      "city": "",
+      "phoneNumber": null,
+      "email": "adam@gmail.com",
+      "password": "ac",
+      "role": "STUDENT",
+      "id": 3
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Cherni",
+      "gender": "",
+      "birthday": "",
+      "country": "",
+      "city": "",
+      "phoneNumber": null,
+      "email": "adam@gmail.com",
+      "password": "ac",
+      "role": "STUDENT",
+      "id": 4
+    },
+    {
+      "firstName": "imen",
+      "lastName": "tounsi",
+      "gender": "",
+      "birthday": "",
+      "country": "",
+      "city": "",
+      "phoneNumber": null,
+      "email": "imen@gmail.com",
+      "password": "im",
+      "role": "STUDENT",
+      "id": 5
     }
   ],
   "education": [
+    {
+      "admissionDate": "",
+      "graduationDate": "",
+      "prepa": "dgbbrs",
+      "comment": "sbgdsb",
+      "option": "",
+      "masterField": "",
+      "masterUniversity": "",
+      "phdField": "eheqt",
+      "phdUniversity": "",
+      "pfeField": "",
+      "pfeUniversity": "",
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "admissionDate": "",
+      "graduationDate": "",
+      "prepa": "dgbbrs",
+      "comment": "sbgdsb",
+      "option": "",
+      "masterField": "",
+      "masterUniversity": "",
+      "phdField": "",
+      "phdUniversity": "",
+      "pfeField": "",
+      "pfeUniversity": "",
+      "userId": 2,
+      "id": 2
+    }
   ],
   "certification": [
     {
@@ -172,6 +277,66 @@
       "comment": "rfr\"e",
       "userId": 2,
       "id": 2
+    },
+    {
+      "name": "",
+      "field": "",
+      "authority": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "comment": "",
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "name": "",
+      "field": "",
+      "authority": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "comment": "",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "name": "",
+      "field": "",
+      "authority": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "comment": "",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "name": "",
+      "field": "",
+      "authority": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "comment": "",
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "name": "iugligliugk",
+      "field": "",
+      "authority": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "comment": "kjglkugm",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "name": "iugligliugk",
+      "field": "",
+      "authority": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "comment": "kjglkugm",
+      "userId": 2,
+      "id": 8
     }
   ],
   "experience": [
@@ -190,6 +355,93 @@
     {
       "userId": 1,
       "name": "blabla"
+    }
+  ],
+  "candidature": [
+    {
+      "userId": 3,
+      "offerId": "2",
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "offerId": "2",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "offerId": "2",
+      "id": 10
+    },
+    {
+      "userId": 3,
+      "offerId": "2",
+      "id": 11
+    },
+    {
+      "userId": 3,
+      "offerId": "2",
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "offerId": "2",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "offerId": "3",
+      "id": 14
+    },
+    {
+      "userId": 3,
+      "offerId": "3",
+      "id": 15
+    },
+    {
+      "userId": 3,
+      "offerId": "5",
+      "id": 16
+    },
+    {
+      "userId": 3,
+      "offerId": "5",
+      "id": 17
     }
   ]
 }

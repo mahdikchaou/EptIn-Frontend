@@ -11,4 +11,5 @@ export interface education{
   pfeField:string;
   pfeUniversity:string;
   userId:number;
+  id:number;
 }

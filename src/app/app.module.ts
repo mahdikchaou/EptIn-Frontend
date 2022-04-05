@@ -4,7 +4,6 @@ import {BrowserModule, Title} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-
 import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface,
@@ -18,6 +17,7 @@ import {AppComponent} from './app.component';
 import {DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent,} from './containers';
 
 import {
+  AccordionModule,
   AvatarModule,
   BadgeModule,
   BreadcrumbModule,
@@ -61,6 +61,8 @@ import {fakeBackendProvider} from "./helpers/fake-backend";
 import {httpInterceptorProviders} from "./helpers/interceptors/httpInterceptorProvider";
 import {Page404Component} from "./page404/page404.component";
 import { AdminComponent } from './admin/admin.component';
+import {NgbModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FiltermultiPipe } from './filtermulti.pipe';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -77,7 +79,7 @@ const APP_CONTAINERS = [
   declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent, RegisterComponent, MyprofileComponent,
     ProfilespageComponent, EducationComponent, CompetencesComponent, ExperienceComponent,
     AppliedComponent, CreeComponent, CreerComponent, OffresComponent, InformationsGeneralesComponent,
-    OfferComponent, ViewProfileComponent, Page404Component, AdminComponent],
+    OfferComponent, ViewProfileComponent, Page404Component, AdminComponent,  FiltermultiPipe],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -108,7 +110,9 @@ const APP_CONTAINERS = [
     TableModule,
     HttpClientModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    AccordionModule,
   ],
   providers: [
     httpInterceptorProviders,

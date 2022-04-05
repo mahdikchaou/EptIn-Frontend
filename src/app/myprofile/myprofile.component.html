@@ -31,31 +31,38 @@
   <perfect-scrollbar [config]="perfectScrollbarConfig">
     <!--  [perfectScrollbar]="perfectScrollbarConfig"-->
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left;font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top:0rem ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotomyprofile()"> General Informations
     </c-sidebar-nav>
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left;font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top: 0rem ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotoeducation()"> Education
     </c-sidebar-nav>
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left;font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top: 0rem ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotocompetences()"> Skills & Certifications
     </c-sidebar-nav>
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large;margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left;font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top: 0rem ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotoexperience()"> Experience
     </c-sidebar-nav>
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large;margin-bottom: 1.5rem; margin-top: 0rem; padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left;font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top: 0 ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotopostule()"> Applied Offers
     </c-sidebar-nav>
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left;font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top: 0 ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotocree()"> Created Offers
     </c-sidebar-nav>
     <c-sidebar-nav
-      style="cursor: pointer;font-size: x-large; margin-bottom: 1.5rem; margin-top: 0rem;padding-left: 1.5rem; padding-top: 2.5rem"
+      class="btn btn-2"
+      style="cursor: pointer; text-align: -webkit-left; font-size: 25px; margin-bottom: 0.5rem; margin-top: 0rem;padding-right: 0rem ;padding-left: 1rem; padding-top: 0 ; font-weight:400; color: #d1d4d9!important;"
       (click)="gotocreer()"> Create an Offer
     </c-sidebar-nav>
   </perfect-scrollbar>
@@ -75,7 +82,7 @@
   <!--app-body-->
   <div class="body flex-grow-1 px-3">
     <br> <br>
-    <c-container>
+    <c-container >
       <router-outlet></router-outlet>
     </c-container>
   </div>

@@ -2,6 +2,7 @@ import {Component, NgModule, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormGroup, FormBuilder} from "@angular/forms"
 import {HttpClient} from "@angular/common/http";
+import {AuthenticationService} from "../_services";
 
 
 
@@ -33,7 +34,9 @@ export class CreerComponent{
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-  constructor(private formBuilder: FormBuilder, private http:HttpClient,private router:Router) {}
+  currentUser = this.authService.currentUserValue;
+
+  constructor(private authService: AuthenticationService,private formBuilder: FormBuilder, private http:HttpClient,private router:Router) {}
   ngOnInit(): void{
     this.createOfferForm=this.formBuilder.group({
       field:[''],
@@ -47,6 +50,7 @@ export class CreerComponent{
       authorityEmail:[''],
       startDate:[''],
       endDate:[''],
+      userId:[this.currentUser.userId]
     })
   }
   addNewOffre(){

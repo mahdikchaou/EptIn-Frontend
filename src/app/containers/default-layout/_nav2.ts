@@ -1,0 +1,22 @@
+export const navItems2: any[] = [
+  {
+    href:'type',
+    name:'Pfe',
+    icon:'cilStar'
+  },
+  {
+    href:'type',
+    name:'Master',
+    icon:'cilStar',
+  },
+  {
+    href:'type',
+    name:'PhD',
+    icon:'cilStar',
+  },
+  {
+    href:'type',
+    name:'Job',
+    icon:'cilStar',
+  }
+]

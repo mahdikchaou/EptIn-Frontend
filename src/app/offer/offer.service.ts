@@ -8,7 +8,7 @@ import{Offre} from "../models/offre";
 })
 export class OfferService {
   constructor(private HttpClient:HttpClient) { }
-  getOfferList(id:string): Observable<Offre>{
+  getOffer(id:string): Observable<Offre>{
    let url: string = "http://localhost:3000/offres/" + id;
     return this.HttpClient.get<Offre>(url);
   }

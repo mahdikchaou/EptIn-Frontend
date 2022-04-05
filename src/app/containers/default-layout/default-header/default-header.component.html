@@ -37,10 +37,10 @@
 
 <!--</c-header>-->
 <ng-template #userDropdown>
-  <c-container [fluid]="true" >
+  <c-container *ngIf="informationsGenerales" [fluid]="true" >
     <c-nav-item>
       <a cNavLink routerLink="/dashboard" routerLinkActive="active" style="color: black" (click)="gotomyprofile()">
-        <!--{{informationsGenerales.firstName}} {{informationsGenerales.lastName}}-->
+        {{informationsGenerales.firstName}} {{informationsGenerales.lastName}}
       </a>
     </c-nav-item>
   </c-container>

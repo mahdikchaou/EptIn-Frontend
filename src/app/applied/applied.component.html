@@ -1,0 +1,18 @@
+<table cTable hover>
+  <thead>
+  <tr>
+    <th scope="col">Offer Name</th>
+    <th scope="col">Authority</th>
+    <th scope="col">Offer Type</th>
+    <th scope="col">Offer Filed</th>
+  </tr>
+  </thead>
+    <tbody *ngIf="offers">
+    <tr *ngFor="let offer of offers">
+      <th>{{offer.name}}</th>
+      <td>{{offer.authority}}</td>
+      <td>{{offer.type}}</td>
+      <td><p *ngFor="let field of this.offer.field"> {{field.name}}</p></td>
+    </tr>
+    </tbody>
+</table>

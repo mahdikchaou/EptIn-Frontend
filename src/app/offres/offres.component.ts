@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OffresService} from "./offres.service";
 import {Offre} from "../models/offre";
-import {stringify} from "@angular/compiler/src/util";
 import {Router} from "@angular/router";
-import {DataService} from "../data.service";
+import {DataServiceOffer} from "../data-offer.service";
+import {FilterService} from "../data-filter.service";
 
 @Component({
   selector: 'app-offres',
@@ -13,20 +13,30 @@ import {DataService} from "../data.service";
 export class OffresComponent implements OnInit {
 
   offres: Offre[] = [];
-  constructor(private data:DataService,private offresService: OffresService, private router:Router) { }
-  message!:string;
+  filterArray: object[] = [{type: ""}, {field: ""}];
+
+  constructor(private data: DataServiceOffer, private offresService: OffresService, private router: Router, private filterService: FilterService) {
+    this.filterService.currentMessage.subscribe(value => {
+      this.filterArray = value;
+    })
+  }
+
+  message!: string;
+
   ngOnInit(): void {
     this.offresService.getOffersList().subscribe(data => {
       //alert(JSON.stringify(data));
       this.offres = data;
     });
-    this.data.currentMessage.subscribe(message=>this.message=message)
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
-  toggle(event: Event):void{
-    let elementId:string=(event.target as Element).id;
+
+  toggle(event: Event): void {
+    let elementId: string = (event.target as Element).id;
     this.data.changeMessage(elementId);
   };
-  gotoOffer(){
+
+  gotoOffer() {
     this.router.navigate(['home/offer'])
   }
 }

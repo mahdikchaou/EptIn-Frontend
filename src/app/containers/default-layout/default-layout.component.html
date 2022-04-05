@@ -21,12 +21,42 @@
   </c-sidebar-brand>
   <perfect-scrollbar [config]="perfectScrollbarConfig">
     <!--  [perfectScrollbar]="perfectScrollbarConfig"-->
-
+    <c-sidebar-nav style="cursor: pointer;font-size: larger; padding-right: 3rem; padding-top: 1rem">
+      <button class="btn btn-2" cBgColor="transparent"
+              style="border-color: transparent; color: lightgrey; text-align: left!important;" (click)="refresh()">
+        <svg cIcon name="cilFilterX" size="xl" title="Numbered List Icon" style="padding-rigth:10rem"></svg>&nbsp;
+        &nbsp;Remove Filters
+      </button>
+    </c-sidebar-nav>
+    <c-sidebar-nav style="cursor: pointer;font-size: larger; padding-right: 3rem; padding-top: 2rem">
+      <button cBgColor="transparent"
+              style="border-color: transparent; color: lightgrey; text-align: left!important;">
+        <svg cIcon name="cilSitemap" size="xl" title="Numbered List Icon" style="padding-rigth:10rem"></svg>&nbsp;
+        &nbsp;Types:
+      </button>
+    </c-sidebar-nav>
+    <c-sidebar-nav *ngFor="let item of navItems2"
+                   style="cursor: pointer;font-size: medium; padding-right: 3rem; padding-top:0;">
+      <button [ngClass]="{'btn-dark': item.isNavItemSelected}" class="btn btn-2" cBgColor="" id={{item}}
+              style="border-color: transparent; color: lightgrey; text-align: left;!important;" (click)="toggle(item)">
+        <svg cIcon name={{item.icon}} size="l" title="Numbered List Icon" style="padding-rigth:10rem"></svg>&nbsp;
+        <svg cIcon name={{item.icon}} size="l" title="Numbered List Icon" style="padding-rigth:10rem"></svg>
+        {{item.name}}
+      </button>
+    </c-sidebar-nav>
+    <c-sidebar-nav style="cursor: pointer;font-size: larger; padding-right: 3rem; padding-top: 2rem">
+      <button cBgColor="transparent"
+              style="border-color: transparent; color: lightgrey; text-align: left!important;">
+        <svg cIcon name="cilSitemap" size="xl" title="Numbered List Icon" style="padding-rigth:10rem"></svg>&nbsp;
+        &nbsp;Branches:
+      </button>
+    </c-sidebar-nav>
     <c-sidebar-nav *ngFor="let item of navItems"
-                   style="cursor: pointer;font-size: large; padding-right: 3rem; padding-top: 2rem">
-      <button cBgColor="transparent" id={{item.name}}
-              style="border-color: transparent; color: lightgrey; text-align: left!important;" >
-        <svg cIcon name={{item.icon}} size="xl" title="Numbered List Icon" style="padding-rigth:10rem"></svg>&nbsp; &nbsp;
+                   style="cursor: pointer;font-size: medium; padding-right: 1rem; padding-top: 0rem">
+      <button  class="btn btn-2" cBgColor="transparent" id={{item.name}}
+              style="border-color: transparent; color: lightgrey; text-align: left!important;" (click)="toggle(item)">
+        <svg cIcon name={{item.icon}} size="xl" title="Numbered List Icon" style="padding-rigth:10rem"></svg>&nbsp;
+        &nbsp;
         {{item.name}}
       </button>
     </c-sidebar-nav>
@@ -37,7 +67,6 @@
     cSidebarToggle="sidebar"
   ></c-sidebar-toggler>
 </c-sidebar>
-<!--<p>the selected is ::{{fieldSelected}}</p>-->
 <!--main-->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
   <!--app-header-->

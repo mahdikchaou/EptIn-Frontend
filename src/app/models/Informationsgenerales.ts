@@ -10,4 +10,5 @@ export interface Informationsgenerales{
   phoneNumber:number,
   id:number;
   field:any;
+  role:string;
 }

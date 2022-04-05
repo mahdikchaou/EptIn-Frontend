@@ -44,8 +44,10 @@ export class CreeComponent{
   deleteOffer(id:string){
     let url="http://localhost:3000/offres/"+id;
     this.httpClient.delete(url).subscribe(data =>{
-       alert("Task successfully done!")
+       alert("Task successfully done!");
     })
+    window.location.reload();
+
   }
   toggle(event: Event):void{
     let elementId:string=(event.target as Element).id;

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {Offre} from "../models/offre";
+import{candidature} from "../models/candidature";
+import {AppliedService} from "./applied.service";
+import {AuthenticationService} from "../_services";
 
 @Component({
   selector: 'app-postule',
@@ -7,11 +11,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./applied.component.scss']
 })
 export class AppliedComponent{
+  candidature!:candidature[];
+  offers:Offre[]=[];
+  currentUser = this.authService.currentUserValue;
 
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
-  constructor(private router:Router) {}
+  constructor(private authService:AuthenticationService , private appliedService: AppliedService ,private router:Router) {}
   gotomyprofile(){
     this.router.navigate(['myprofile/informations_generales'])
   };
@@ -32,5 +39,16 @@ export class AppliedComponent{
   };
   gotoexperience(){
     this.router.navigate(['myprofile/experience'])
+  }
+
+  ngOnInit():void{
+    this.appliedService.getCandidatures(this.currentUser.userId.toString()).subscribe(data1 => {
+      this.candidature = data1;
+      for (var c of this.candidature){
+        this.appliedService.getUserAppliedOffer(c.offerId.toString()).subscribe(data2=>{
+          var l= this.offers.push(data2);
+        })
+      }
+    });
   }
 }

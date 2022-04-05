@@ -9,9 +9,9 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 export class EducationService {
   constructor(private httpClient:HttpClient) {
   }
-  getEducation(userId:string):Observable<education>{
+  getEducation(userId:string):Observable<education[]>{
     let params1=new HttpParams();
     params1=params1.append('userId',userId);
-    return this.httpClient.get<education>("http://localhost:3000/education",{params:params1});
+    return this.httpClient.get<education[]>("http://localhost:3000/education",{params:params1});
   }
 }

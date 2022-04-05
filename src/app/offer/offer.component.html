@@ -20,8 +20,8 @@
         <input cBgColor="white" id="type" cFormControl disabled value={{offer.type}} />
       </c-col>
       <c-col [xs]>
-        <label cLabel for="fields">Filed(s)</label>
-        <span *ngFor="let fields of offer.field">{{fields.name}}, </span>
+        <label cLabel for="fields">Filed(s): </label>
+        <p *ngFor="let fields of offer.field">{{fields.name}}, </p>
       </c-col>
     </c-row>
     <br>
@@ -317,6 +317,10 @@
     <br>
     <label cLabel for="exampleFormControlTextarea1">Spare no detail about this offer: </label>
     <textarea disabled cBgColor="white" cFormControl id="exampleFormControlTextarea1" rows="3" [ngStyle]="{ 'height.px': 150 }" value={{offer.comment}}></textarea>
+    <br>
+    <div class="mt-3">
+        <button (click)="toggle($event)" cButton type="submit">Apply to this offer</button>
+    </div>
     <br>
   </c-container>
 </div>
