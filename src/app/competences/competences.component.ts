@@ -51,10 +51,10 @@ export class CompetencesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.competencesService.getCertifications(this.currentUser.userId.toString()).subscribe(data2 => {
+    this.competencesService.getCertifications(this.currentUser.id.toString()).subscribe(data2 => {
       this.certification = data2;
     })
-    this.competencesService.getSkills(this.currentUser.userId.toString()).subscribe(data2 => {
+    this.competencesService.getSkills(this.currentUser.id.toString()).subscribe(data2 => {
       this.skill = data2;
     })
     this.certificationForm = this.formBuilder.group({
@@ -64,13 +64,13 @@ export class CompetencesComponent implements OnInit {
       issueDate: [''],
       expirationDate: [''],
       comment: [''],
-      userId: this.currentUser.userId,
+      userId: this.currentUser.id,
       id: []
     })
     this.skillForm = this.formBuilder.group({
       name: [''],
       comment: [''],
-      userId: this.currentUser.userId,
+      userId: this.currentUser.id,
       id: []
     })
   }

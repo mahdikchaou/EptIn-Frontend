@@ -12,7 +12,7 @@ export class OffresService {
   }
 
   getOffersList(): Observable<Offre[]>{
-    return this.httpClient.get<Offre[]>("http://localhost:3000/offres");
+    return this.httpClient.get<Offre[]>("http://localhost:9090/api/offres");
   }
 
   addNewOffer(){

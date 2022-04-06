@@ -91,6 +91,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div *ngIf="profiles">
   <div  class="well profile_view" *ngFor="let profiles of profiles"><c-row>
+    {{profiles.firstName}}
     <c-col [xs]>
       <div class="left col-xs-7" style="padding-left: 2rem">
         <p><strong>Full Name: </strong> {{profiles.firstName}} {{profiles.lastName}}</p>

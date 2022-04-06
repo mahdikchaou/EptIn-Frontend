@@ -21,10 +21,9 @@ export class ViewProfileComponent implements OnInit {
   certification!: Certification[];
   skill!: Skill[];
   constructor(private data:DataService, private viewProfileService:ViewProfileService) { }
-  message!:string;
+  message:string="";
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message=>this.message=message);
-
     this.viewProfileService.getInformationsGenerales(this.message).subscribe(data1 => {
       this.informationsGenerales = data1;
     });

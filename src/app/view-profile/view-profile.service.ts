@@ -12,13 +12,13 @@ import {Certification} from "../models/certification";
 export class ViewProfileService {
   constructor(private HttpClient:HttpClient) { }
   getInformationsGenerales(id:string): Observable<Informationsgenerales>{
-    let url: string = "http://localhost:3000/user/" + id;
+    let url: string = "http://localhost:9090/api/users/" + id;
     return this.HttpClient.get<Informationsgenerales>(url);
   }
   getEducation(userId:string):Observable<education[]>{
     let params1=new HttpParams();
-    params1=params1.append('userId',userId);
-    return this.HttpClient.get<education[]>("http://localhost:3000/education",{params:params1});
+    params1=params1.append('id',userId);
+    return this.HttpClient.get<education[]>("http://localhost:9090/api/profile/2");
   }
   getExperience(userId:string):Observable<experience[]>{
     let params1=new HttpParams();

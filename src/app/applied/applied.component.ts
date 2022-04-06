@@ -42,7 +42,7 @@ export class AppliedComponent{
   }
 
   ngOnInit():void{
-    this.appliedService.getCandidatures(this.currentUser.userId.toString()).subscribe(data1 => {
+    this.appliedService.getCandidatures(this.currentUser.id.toString()).subscribe(data1 => {
       this.candidature = data1;
       for (var c of this.candidature){
         this.appliedService.getUserAppliedOffer(c.offerId.toString()).subscribe(data2=>{

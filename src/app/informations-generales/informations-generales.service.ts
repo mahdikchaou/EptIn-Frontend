@@ -11,7 +11,7 @@ export class InformationsGeneralesService {
   constructor(private httpClient:HttpClient) { }
 
   getInformationsGenerales(id:string): Observable<Informationsgenerales>{
-    let url: string = "http://localhost:3000/user/" + id;
+    let url: string = "http://localhost:9090/api/users/"+id;
     return this.httpClient.get<Informationsgenerales>(url);
   }
   addNewInformationsGeneralesList(){

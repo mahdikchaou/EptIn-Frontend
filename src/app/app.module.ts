@@ -57,7 +57,7 @@ import {OfferComponent} from './offer/offer.component';
 import {NgSelectModule} from "@ng-select/ng-select";
 import {OffresService} from "./offres/offres.service";
 import {ViewProfileComponent} from './view-profile/view-profile.component';
-import {fakeBackendProvider} from "./helpers/fake-backend";
+//import {fakeBackendProvider} from "./helpers/fake-backend";
 import {httpInterceptorProviders} from "./helpers/interceptors/httpInterceptorProvider";
 import {Page404Component} from "./page404/page404.component";
 import { AdminComponent } from './admin/admin.component';
@@ -116,7 +116,7 @@ const APP_CONTAINERS = [
   ],
   providers: [
     httpInterceptorProviders,
-    fakeBackendProvider,
+    //fakeBackendProvider,
     OffresService,
     {
       provide: LocationStrategy,

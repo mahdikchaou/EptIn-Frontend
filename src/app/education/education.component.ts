@@ -87,15 +87,15 @@ export class EducationComponent {
       phdUniversity: [''],
       pfeField: [''],
       pfeUniversity: [''],
-      userId: this.currentUser.userId
+      userId: this.currentUser.id
     })
-    this.educationService.getEducation(this.currentUser.userId.toString()).subscribe(data2 => {
+    this.educationService.getEducation(this.currentUser.id.toString()).subscribe(data2 => {
       this.education = data2;
       for (var ed of this.education ){
         let form = {
           admissionDate: ed.admissionDate,
           graduationDate: ed.graduationDate,
-          prepa: ed.prepa,
+          //prepa: ed.prepa,
           comment: ed.comment,
           option: ed.option,
           masterField: ed.masterField,
@@ -104,7 +104,7 @@ export class EducationComponent {
           phdUniversity: ed.phdUniversity,
           pfeField: ed.pfeField,
           pfeUniversity: ed.pfeUniversity,
-          userId: this.currentUser.userId
+          userId: this.currentUser.id
         }
         this.EducationForm.setValue(form)
       }
@@ -117,14 +117,14 @@ export class EducationComponent {
 
   updateEducation() {
     if(this.education[0]) {
-      this.HttpClient.put<any>("http://localhost:3000/education/"+this.education[0].id, this.EducationForm.value)
+      this.HttpClient.put<any>("http://localhost:9090/api/profile/education/"+this.education[0].id, this.EducationForm.value)
         .subscribe(res => {
           window.location.reload()
         }, err => {
           alert("problemo")
         })
     }else{
-      this.HttpClient.post<any>("http://localhost:3000/education",this.EducationForm.value)
+      this.HttpClient.post<any>("http://localhost:9090/api/profile/education",this.EducationForm.value)
         .subscribe(res=>{
           alert('good')},err=>{
           alert("problem")

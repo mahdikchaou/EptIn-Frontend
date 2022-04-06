@@ -12,6 +12,6 @@ export class ProfilesService {
   }
 
   getProfilesList(): Observable<Informationsgenerales[]> {
-    return this.httpClient.get<Informationsgenerales[]>("http://localhost:3000/user");
+    return this.httpClient.get<Informationsgenerales[]>("http://localhost:9090/api/users");
   }
 }

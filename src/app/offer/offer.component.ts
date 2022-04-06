@@ -39,7 +39,7 @@ export class OfferComponent implements OnInit {
   applyToOffer(offerId:string){
     this.HttpClient.post<any>("http://localhost:3000/candidature",
       {
-        userId:this.currentUser.userId,
+        userId:this.currentUser.id,
         offerId:offerId,
       })
       .subscribe(res => {

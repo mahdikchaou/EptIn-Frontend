@@ -86,7 +86,7 @@ export class InformationsGeneralesComponent implements OnInit {
       field: [''],
       role:[''],
     })
-    this.infognservice.getInformationsGenerales(this.currentUser.userId.toString()).subscribe(data1 => {
+    this.infognservice.getInformationsGenerales(this.currentUser.id.toString()).subscribe(data1 => {
       this.infogn = data1;
       let form= {
         firstName: this.infogn.firstName,
@@ -99,7 +99,7 @@ export class InformationsGeneralesComponent implements OnInit {
         email: this.infogn.email,
         password: this.infogn.password,
         field: [''],
-        role:[this.infogn.role],
+        role:this.infogn.role,
       }
       this.infoGnForm.setValue(form);
 
@@ -107,7 +107,7 @@ export class InformationsGeneralesComponent implements OnInit {
   }
 
   updateInfoGn() {
-    let url: string = "http://localhost:3000/user/" + this.currentUser.userId.toString();
+    let url: string = "http://localhost:9090/api/users/" + this.currentUser.id.toString();
     this.HttpClient.put<any>(url, this.infoGnForm.value)
       .subscribe(res => {
       }, err => {

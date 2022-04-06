@@ -9,7 +9,7 @@ import{Offre} from "../models/offre";
 export class OfferService {
   constructor(private HttpClient:HttpClient) { }
   getOffer(id:string): Observable<Offre>{
-   let url: string = "http://localhost:3000/offres/" + id;
+   let url: string = "http://localhost:9090/api/offres/" + id;
     return this.HttpClient.get<Offre>(url);
   }
 }

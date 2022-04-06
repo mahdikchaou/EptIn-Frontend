@@ -11,7 +11,7 @@ export class EducationService {
   }
   getEducation(userId:string):Observable<education[]>{
     let params1=new HttpParams();
-    params1=params1.append('userId',userId);
-    return this.httpClient.get<education[]>("http://localhost:3000/education",{params:params1});
+    params1=params1.append('id',userId);
+    return this.httpClient.get<education[]>("http://localhost:9090/api/profile/education",{params: params1});
   }
 }

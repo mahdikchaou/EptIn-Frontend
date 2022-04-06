@@ -54,7 +54,7 @@ export class CreeComponent{
     this.deleteOffer(elementId)
   };
   ngOnInit():void{
-    this.cree.getUserOffers(this.currentUser.userId.toString()).subscribe(data2=>{
+    this.cree.getUserOffers(this.currentUser.id.toString()).subscribe(data2=>{
       this.offers=data2;
     });
   }

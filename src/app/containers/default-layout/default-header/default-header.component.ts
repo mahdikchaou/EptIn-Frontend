@@ -20,11 +20,11 @@ export class DefaultHeaderComponent extends HeaderComponent {
   }
   informationsGenerales!:Informationsgenerales;
 
-  currentUser = this.authService.currentUserValue;
+  currentUser= this.authService.currentUserValue;
 
 
   ngOnInit(): void {
-    this.defaultHeaderService.getInformationsGenerales(this.currentUser.userId.toString()).subscribe(data1 => {
+    this.defaultHeaderService.getInformationsGenerales(this.currentUser.id.toString()).subscribe(data1 => {
       this.informationsGenerales = data1;
     });
   }

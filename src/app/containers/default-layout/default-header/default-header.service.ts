@@ -9,7 +9,7 @@ import {Informationsgenerales} from "../../../models/Informationsgenerales";
 export class DefaultHeaderService {
   constructor(private HttpClient:HttpClient) { }
   getInformationsGenerales(id:string): Observable<Informationsgenerales>{
-    let url: string = "http://localhost:3000/user/" + id;
+    let url: string = "http://localhost:9090/api/users/" + id;
     return this.HttpClient.get<Informationsgenerales>(url);
   }
 }

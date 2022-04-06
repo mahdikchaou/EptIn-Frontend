@@ -63,7 +63,7 @@ export class ExperienceComponent {
     this.router.navigate(['myprofile/experience'])
   }
   ngOnInit():void{
-    this.experienceService.getExperience(this.currentUser.userId.toString()).subscribe(data2=>{
+    this.experienceService.getExperience(this.currentUser.id.toString()).subscribe(data2=>{
       this.experience=data2;
     });
     this.experiencef=this.formBuilder.group({
@@ -73,7 +73,7 @@ export class ExperienceComponent {
       employmentType:[''],
       jobTitle:[''],
       comment:[''],
-      userId:this.currentUser.userId,
+      userId:this.currentUser.id,
       id:[]
     })
   }
