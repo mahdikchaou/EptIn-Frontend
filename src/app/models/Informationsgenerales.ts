@@ -1,3 +1,6 @@
+import {education} from "./education";
+import{Certification} from "./certification"
+import {Offre} from "./offre";
 export interface Informationsgenerales{
   firstName:string,
   lastName:string,
@@ -11,4 +14,7 @@ export interface Informationsgenerales{
   id:number;
   field:any;
   role:string;
+  education?:education[];
+  certification?:Certification[];
+  offres?:Offre;
 }

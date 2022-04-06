@@ -6,16 +6,16 @@
     <c-col [xs]> Type:</c-col>
     <c-col [xs]>
       <label for="pfe">
-        <input formControlName="type" type="radio" id="pfe" name="type" value="pfe"> Pfe
+        <input formControlName="type" type="radio" id="pfe" name="type" value="Pfe"> Pfe
       </label>
     </c-col>
     <c-col [xs]>
       <label for="master">
-        <input formControlName="type" type="radio" id="master" name="type" value="master"> Master
+        <input formControlName="type" type="radio" id="master" name="type" value="Master"> Master
       </label></c-col>
     <c-col [xs]>
       <label for="phd">
-        <input formControlName="type" type="radio" id="phd" name="type" value="phd"> PhD
+        <input formControlName="type" type="radio" id="phd" name="type" value="PhD"> PhD
       </label></c-col>
     <c-col [xs]>
       <label for="Job">
@@ -26,15 +26,24 @@
   <c-row>
     <c-col [xs]>
       <label cLabel for="fields">Filed(s)</label>
-      <ng-select formControlName="field" id="fields" [items]="items"
-                 bindLabel="name"
-                 placeholder="Select item"
-                 appendTo="body"
-                 [multiple]="true"
-                 [clearable]="true"
-                 [searchable]="true"
-      >
-      </ng-select>
+      <select formControlName="field" id="fields">
+        <option value="sysco">Sysco</option>
+        <option value="sysi">SYSI</option>
+        <option value="eges">EGES</option>
+        <option value="aerospace engineering">Aerospace Engineering</option>
+        <option value="automobile engineering">Automobile Engineering</option>
+        <option value="civil engineering">Civil Engineering</option>
+        <option value="energy engineering">Energy Engineering</option>
+        <option value="mechanical engineering">Mechanical Engineering</option>
+        <option value="industrial engineering">Industrial Engineering</option>
+        <option value="nuclear engineering">Nuclear Engineering</option>
+        <option value="hydraulic engineering">Hydraulic Engineering</option>
+        <option value="computer engineering">Computer Engineering</option>
+        <option value="electrical engineering">Electrical Engineering</option>
+        <option value="telecommunication engineering">Telecommunication Engineering</option>
+        <option value="engineering management">Engineering Management</option>
+
+      </select>
     </c-col>
     <c-col [xs]>
       <label cLabel for="university/company">University/ Company</label>

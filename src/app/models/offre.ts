@@ -5,10 +5,11 @@ export interface Offre {
   type: string,
   name: string,
   comment: string,
-  authorityEmail:string,
-  authorityPhoneNumber:number,
+  email:string,
+  phoneNumber:string,
   startDate:string,
   endDate?:string,
-  field:any,
+  field:string,
   id:number,
+  Students:[]
 }

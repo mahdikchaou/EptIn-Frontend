@@ -39,7 +39,6 @@ export class CreerComponent{
   constructor(private authService: AuthenticationService,private formBuilder: FormBuilder, private http:HttpClient,private router:Router) {}
   ngOnInit(): void{
     this.createOfferForm=this.formBuilder.group({
-      id:[],
       field:[''],
       name:[''],
       authority:[''],
@@ -47,11 +46,11 @@ export class CreerComponent{
       comment:[''],
       country:[''],
       city:[''],
-      authorityPhoneNumber:[],
+      phoneNumber:[''],
       email:[''],
       startDate:[''],
       endDate:[''],
-      exstudentId:this.currentUser.id
+      exstudentId:[this.currentUser.id],
     })
   }
   addNewOffre(){

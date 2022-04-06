@@ -31,12 +31,12 @@ export class OffresComponent implements OnInit {
     this.data.currentMessage.subscribe(message => this.message = message)
   }
 
-  toggle(event: Event): void {
-    let elementId: string = (event.target as Element).id;
-    this.data.changeMessage(elementId);
-  };
-
-  gotoOffer() {
-    this.router.navigate(['home/offer'])
-  }
+  // toggle(event: Event): void {
+  //   let elementId: string = (event.target as Element).id;
+  //   this.data.changeMessage(elementId);
+  // };
+  //
+  // gotoOffer() {
+  //   this.router.navigate(['home/offer'])
+  // }
 }

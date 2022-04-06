@@ -24,6 +24,7 @@ export class ViewProfileComponent implements OnInit {
   message:string="";
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message=>this.message=message);
+    alert(this.message)
     this.viewProfileService.getInformationsGenerales(this.message).subscribe(data1 => {
       this.informationsGenerales = data1;
     });
@@ -36,9 +37,9 @@ export class ViewProfileComponent implements OnInit {
     this.viewProfileService.getCertifications(this.message).subscribe(data2=>{
       this.certification=data2;
     })
-    this.viewProfileService.getSkills(this.message).subscribe(data2=>{
-      this.skill=data2;
-    })
+    // this.viewProfileService.getSkills(this.message).subscribe(data2=>{
+    //   this.skill=data2;
+    // })
   }
 
 }

@@ -1,5 +1,5 @@
-<form [formGroup]="EducationForm" (ngSubmit)="updateEducation()" cBgColor="white" >
-  {{education1.option}}
+<form  [formGroup]="EducationForm" (ngSubmit)="updateEducation()" cBgColor="white" >
+  <div *ngIf="education1">
     <br>
     <c-row>
       <c-col [xs]>
@@ -13,14 +13,14 @@
     </c-row>
     <br>
     <c-row>
-      <c-col [xs]>
+      <!--<c-col [xs]>
         <label cLabel for="Prépa">Prepa</label>
         <input id="Prépa" aria-label="Prépa" cFormControl  formControlName="prepa" />
-      </c-col>
+      </c-col>-->
       <c-col [md]="6">
         <label cLabel for="Option">Option</label>
         <select formControlName="option" cSelect id="Option">
-          <option></option>
+          <option>jbkj</option>
           <option value="SISY">Sisy</option>
           <option value="SySco">Sysco</option>
           <option value="EGES">Eges</option>
@@ -71,10 +71,12 @@
   </textarea>
     </div>
     <br>
-    <c-col [xs]="12">
-      <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
-    </c-col>
-    <br>
+  </div>
+  <br>
+  <c-col [xs]="12">
+    <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+  </c-col>
+  <br>
   </form>
 
 

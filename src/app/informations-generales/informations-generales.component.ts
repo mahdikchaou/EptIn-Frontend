@@ -97,7 +97,7 @@ export class InformationsGeneralesComponent implements OnInit {
         city: this.infogn.city,
         phoneNumber:this.infogn.phoneNumber,
         email: this.infogn.email,
-        password: this.infogn.password,
+        password:'',
         field: [''],
         role:this.infogn.role,
       }
@@ -107,7 +107,7 @@ export class InformationsGeneralesComponent implements OnInit {
   }
 
   updateInfoGn() {
-    let url: string = "http://localhost:9090/api/users/" + this.currentUser.id.toString();
+    let url: string = "http://localhost:9090/api/users/";
     this.HttpClient.put<any>(url, this.infoGnForm.value)
       .subscribe(res => {
       }, err => {

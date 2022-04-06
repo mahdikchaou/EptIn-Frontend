@@ -42,11 +42,11 @@ export class CreeComponent{
     this.router.navigate(['myprofile/experience'])
   };
   deleteOffer(id:string){
-    let url="http://localhost:3000/offres/"+id;
+    let url="http://localhost:9090/api/offres/"+id;
     this.httpClient.delete(url).subscribe(data =>{
        alert("Task successfully done!");
     })
-    window.location.reload();
+    //window.location.reload();
 
   }
   toggle(event: Event):void{

@@ -54,9 +54,9 @@ export class CompetencesComponent implements OnInit {
     this.competencesService.getCertifications(this.currentUser.id.toString()).subscribe(data2 => {
       this.certification = data2;
     })
-    this.competencesService.getSkills(this.currentUser.id.toString()).subscribe(data2 => {
-      this.skill = data2;
-    })
+    // this.competencesService.getSkills(this.currentUser.id.toString()).subscribe(data2 => {
+    //   this.skill = data2;
+    // })
     this.certificationForm = this.formBuilder.group({
       name: [''],
       field: [''],
@@ -105,9 +105,10 @@ export class CompetencesComponent implements OnInit {
   }
 
   addCertification() {
-    this.HttpClient.post<any>("http://localhost:3000/certification", this.certificationForm.value)
+    this.HttpClient.post<any>("http://localhost:9090/api/profile/certification", this.certificationForm.value)
       .subscribe(res => {
         this.certificationForm.reset();
+        window.location.reload()
       }, err => {
         alert("Something went wrong, try again")
       })

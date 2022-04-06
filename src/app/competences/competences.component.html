@@ -1,53 +1,55 @@
 <br>
 <h4>Your Certifications: </h4>
-<div *ngIf="certification">
+<div>
+  <div *ngIf="certification">
 
 
-  <div *ngFor="let cert of certification">
-    <br>
-    <hr>
-    <br>
-    <c-row>
-      <c-col [xs]>
-        <label cLabel for="name">Name</label>
-        <input id="name" cFormControl disabled cBgColor="white" value={{cert.name}}/>
-      </c-col>
-      <c-col [xs]>
-        <label cLabel for="field">Field</label>
-        <input id="field" cFormControl disabled cBgColor="white" value={{cert.field}}/>
-      </c-col>
-      <c-col [xs]>
-        <label cLabel for="authority">Authority</label>
-        <input id="authority" cFormControl disabled cBgColor="white" value={{cert.authority}}/>
-      </c-col>
-    </c-row>
-    <br>
-    <c-row>
-      <c-col [xs]>
-        <label cLabel for="issuedate">Issue Date</label>
-        <input disabled cBgColor="white" value={{cert.issueDate}} id="issuedate" cFormControl type="date"/>
-      </c-col>
-      <c-col [xs]>
-        <label cLabel for="expirationdate">Expiration Date</label>
-        <input disabled cBgColor="white" value={{cert.expirationDate}} id="expirationdate" cFormControl type="date"/>
-      </c-col>
-    </c-row>
-    <br>
-    <div cFormFloating>
-      <p>Feel free to add any comment (Ex: why you felt like learning this skill):</p>
-      <textarea
-        disabled cBgColor="white" value={{cert.comment}}
-        [ngStyle]="{ 'height.px': 150 }"
-        cFormControl
-        id="CommentEducation">
+    <div *ngFor="let cert of certification">
+      <br>
+      <hr>
+      <br>
+      <c-row>
+        <c-col [xs]>
+          <label cLabel for="name">Name</label>
+          <input id="name" cFormControl disabled cBgColor="white" value={{cert.name}}/>
+        </c-col>
+        <c-col [xs]>
+          <label cLabel for="field">Field</label>
+          <input id="field" cFormControl disabled cBgColor="white" value={{cert.field}}/>
+        </c-col>
+        <c-col [xs]>
+          <label cLabel for="authority">Authority</label>
+          <input id="authority" cFormControl disabled cBgColor="white" value={{cert.authority}}/>
+        </c-col>
+      </c-row>
+      <br>
+      <c-row>
+        <c-col [xs]>
+          <label cLabel for="issuedate">Issue Date</label>
+          <input disabled cBgColor="white" value={{cert.issueDate}} id="issuedate" cFormControl type="date"/>
+        </c-col>
+        <c-col [xs]>
+          <label cLabel for="expirationdate">Expiration Date</label>
+          <input disabled cBgColor="white" value={{cert.expirationDate}} id="expirationdate" cFormControl type="date"/>
+        </c-col>
+      </c-row>
+      <br>
+      <div cFormFloating>
+        <p>Feel free to add any comment (Ex: why you felt like learning this skill):</p>
+        <textarea
+          disabled cBgColor="white" value={{cert.comment}}
+          [ngStyle]="{ 'height.px': 150 }"
+          cFormControl
+          id="CommentEducation">
   </textarea>
+      </div>
     </div>
+    <br>
   </div>
-  <br>
   <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add a new Certification</button>
   <br>
-  <br>
-</div><br>
+</div>
+<br>
 <hr>
 
 

@@ -14,11 +14,11 @@ export class CompetencesService {
   getCertifications(userId:string):Observable<Certification[]>{
     let params1=new HttpParams();
     params1=params1.append('userId',userId);
-    return this.HttpClient.get<Certification[]>("http://localhost:3000/certification",{params:params1});
+    return this.HttpClient.get<Certification[]>("http://localhost:9090/api/profile/certification");
   }
-  getSkills(userId:string):Observable<Skill[]>{
-    let params1=new HttpParams();
-    params1=params1.append('userId',userId);
-    return this.HttpClient.get<Skill[]>("http://localhost:3000/skill",{params:params1});
-  }
+  // getSkills(userId:string):Observable<Skill[]>{
+  //   let params1=new HttpParams();
+  //   params1=params1.append('userId',userId);
+  //   return this.HttpClient.get<Skill[]>("http://localhost:3000/skill",{params:params1});
+  // }
 }

@@ -12,7 +12,10 @@
       <th>{{offer.name}}</th>
       <td>{{offer.authority}}</td>
       <td>{{offer.type}}</td>
-      <td><p *ngFor="let field of this.offer.field"> {{field.name}}</p></td>
+      <td><p > {{offer.field}}</p></td>
+      {{offer.comment}}
+
     </tr>
     </tbody>
+
 </table>

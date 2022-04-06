@@ -21,11 +21,11 @@
           </c-col>
         </c-row>
         <div class="content mt-4">
-          <h5 class="title">{{offres.type.toUpperCase()}}</h5>
-          <p class="text-muted mt-3 mb-0"> {{offres.type}} in  <span *ngFor="let f of offres.field"> {{f.name}}, </span> in {{offres.city.toLocaleLowerCase()}}, {{offres.country.toUpperCase()}} </p>
+          <h5 class="title">{{offres.type}}</h5>
+          <p class="text-muted mt-3 mb-0"> {{offres.type}} in  <span *ngFor="let f of offres.field"> {{f.name}}, </span> in {{offres.city}}, {{offres.country}} </p>
           <p class="text-muted mt-3 mb-0"> Starts in {{offres.startDate}} and ends in {{offres.endDate}} </p>
-          <div class="mt-3">
-            <button (click)="gotoOffer(); toggle($event)" cBgColor="white" cBorder="false" cTextColor="primary" id={{offres.id}} class="btn-2">Read More </button>
+          <div class="mt-3" >
+            <button routerLink="/home/offer/{{offres.id}}" cBgColor="white" cBorder="false" cTextColor="primary" id={{offres.id}} class="btn-2">Read More </button>
           </div>
         </div>
         <div class="big-icon h1 text-custom">

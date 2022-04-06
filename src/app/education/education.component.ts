@@ -76,11 +76,12 @@ export class EducationComponent {
 
   ngOnInit(): void {
     this.EducationForm = this.formBuilder.group({
+      id:[''],
       admissionDate: [''],
       graduationDate: [''],
-      prepa: [''],
+      //yprepa: [''],
       comment: [''],
-      option: [''],
+      option: ['hvkhg'],
       masterField: [''],
       masterUniversity: [''],
       phdField: [''],
@@ -93,6 +94,7 @@ export class EducationComponent {
       this.education = data2;
       for (var ed of this.education ){
         let form = {
+          id:ed.id,
           admissionDate: ed.admissionDate,
           graduationDate: ed.graduationDate,
           //prepa: ed.prepa,
@@ -117,7 +119,7 @@ export class EducationComponent {
 
   updateEducation() {
     if(this.education[0]) {
-      this.HttpClient.put<any>("http://localhost:9090/api/profile/education/"+this.education[0].id, this.EducationForm.value)
+      this.HttpClient.put<any>("http://localhost:9090/api/profile/education", this.EducationForm.value)
         .subscribe(res => {
           window.location.reload()
         }, err => {

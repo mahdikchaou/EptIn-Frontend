@@ -21,7 +21,7 @@
       </c-col>
       <c-col [xs]>
         <label cLabel for="fields">Filed(s): </label>
-        <p *ngFor="let fields of offer.field">{{fields.name}}, </p>
+        <p>{{offer.field}} </p>
       </c-col>
     </c-row>
     <br>
@@ -35,11 +35,11 @@
     <c-row>
       <c-col [xs]>
         <label cLabel for="authorityEmail"> Authority Email</label>
-        <input cBgColor="white" id="authorityEmail"  cFormControl value={{offer.authorityEmail}} disabled/>
+        <input cBgColor="white" id="authorityEmail"  cFormControl value={{offer.email}} disabled/>
       </c-col>
       <c-col [xs]>
         <label cLabel for="authorityPhoneNumber">Auhtority Phone Number </label>
-        <input cBgColor="white" id="authorityPhoneNumber" cFormControl disabled value={{offer.authorityPhoneNumber}} />
+        <input cBgColor="white" id="authorityPhoneNumber" cFormControl disabled value={{offer.phoneNumber}} />
       </c-col>
     </c-row>
 

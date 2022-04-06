@@ -12,8 +12,6 @@ export class ExperienceService {
   constructor(private httpClient:HttpClient) { }
 
   getExperience(userId:string):Observable<experience[]>{
-    let params1=new HttpParams();
-    params1=params1.append('userId',userId);
-    return this.httpClient.get<experience[]>("http://localhost:3000/experience",{params:params1});
+    return this.httpClient.get<experience[]>("http://localhost:9090/api/profile/experience");
   }
 }

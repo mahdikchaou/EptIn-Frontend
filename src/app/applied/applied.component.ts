@@ -11,7 +11,6 @@ import {AuthenticationService} from "../_services";
   styleUrls: ['./applied.component.scss']
 })
 export class AppliedComponent{
-  candidature!:candidature[];
   offers:Offre[]=[];
   currentUser = this.authService.currentUserValue;
 
@@ -42,13 +41,8 @@ export class AppliedComponent{
   }
 
   ngOnInit():void{
-    this.appliedService.getCandidatures(this.currentUser.id.toString()).subscribe(data1 => {
-      this.candidature = data1;
-      for (var c of this.candidature){
-        this.appliedService.getUserAppliedOffer(c.offerId.toString()).subscribe(data2=>{
-          var l= this.offers.push(data2);
-        })
-      }
+    this.appliedService.getUserAppliedOffer().subscribe(data=>{
+      this.offers=data;
     });
   }
 }

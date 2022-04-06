@@ -4,6 +4,7 @@ import {Offre} from "../models/offre";
 import{HttpClient} from "@angular/common/http";
 import {AuthenticationService} from "../_services";
 import {DataServiceOffer} from "../data-offer.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-offer',
@@ -27,30 +28,22 @@ export class OfferComponent implements OnInit {
 
   ];
   offer!:Offre;
-  constructor(private authService: AuthenticationService, private HttpClient: HttpClient, private data:DataServiceOffer, private offerService:OfferService) { }
-  message!:string;
+  constructor(private route: ActivatedRoute, private authService: AuthenticationService, private HttpClient: HttpClient, private data:DataServiceOffer, private offerService:OfferService) { }
+id!:number;
   currentUser = this.authService.currentUserValue;
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message=>this.message=message);
-    this.offerService.getOffer(this.message).subscribe(data1 => {
+    this.id = this.route.snapshot.params['id'];
+    this.offerService.getOffer(this.id).subscribe(data1 => {
       this.offer = data1;
     });
   }
-  applyToOffer(offerId:string){
-    this.HttpClient.post<any>("http://localhost:3000/candidature",
-      {
-        userId:this.currentUser.id,
-        offerId:offerId,
-      })
-      .subscribe(res => {
-        alert("good")
-      }, err => {
-        alert("Something went wrong, try again")
-      })
-  }
   toggle(event: Event):void{
-      this.applyToOffer(this.message)
-  };
+    this.offerService.applyToOffer(this.id.toString()).subscribe(data=>{
+      alert("application done!")
+    },error => {
+      alert("something wrong, try again")
+    })
+  }
 
 
 }
