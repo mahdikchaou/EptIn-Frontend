@@ -44,7 +44,7 @@ export class CreeComponent{
   deleteOffer(id:string){
     let url="http://localhost:9090/api/offres/"+id;
     this.httpClient.delete(url).subscribe(data =>{
-       alert("Task successfully done!");
+      // alert("Task successfully done!");
     })
     //window.location.reload();
 

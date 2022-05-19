@@ -81,7 +81,7 @@ export class EducationComponent {
       graduationDate: [''],
       //yprepa: [''],
       comment: [''],
-      option: ['hvkhg'],
+      option: [''],
       masterField: [''],
       masterUniversity: [''],
       phdField: [''],
@@ -122,15 +122,12 @@ export class EducationComponent {
       this.HttpClient.put<any>("http://localhost:9090/api/profile/education", this.EducationForm.value)
         .subscribe(res => {
           window.location.reload()
-        }, err => {
-          alert("problemo")
         })
     }else{
       this.HttpClient.post<any>("http://localhost:9090/api/profile/education",this.EducationForm.value)
         .subscribe(res=>{
-          alert('good')},err=>{
-          alert("problem")
-        })
+          window.location.reload()
+          })
     }
 
         }

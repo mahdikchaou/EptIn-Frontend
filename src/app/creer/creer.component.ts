@@ -56,7 +56,7 @@ export class CreerComponent{
   addNewOffre(){
     this.http.post<any>("http://localhost:9090/api/offres", this.createOfferForm.value)
       .subscribe(res=>{
-        alert("creation good");
+        //alert("creation good");
         this.createOfferForm.reset();
       }, err=>{
         alert("Something went wrong, try again")

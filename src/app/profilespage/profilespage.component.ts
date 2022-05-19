@@ -18,7 +18,6 @@ export class ProfilespageComponent implements OnInit{
 
   ngOnInit(): void {
     this.profilesService.getProfilesList().subscribe(data => {
-      //alert(JSON.stringify(data));
       this.profiles = data;
     });
     this.data.currentMessage.subscribe(message=>this.message=message)

@@ -39,7 +39,7 @@ id!:number;
   }
   toggle(event: Event):void{
     this.offerService.applyToOffer(this.id.toString()).subscribe(data=>{
-      alert("application done!")
+     // alert("application done!")
     },error => {
       alert("something wrong, try again")
     })

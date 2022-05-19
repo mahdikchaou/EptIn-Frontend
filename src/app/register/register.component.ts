@@ -33,10 +33,8 @@ export class RegisterComponent {
 
   register() {
     this.authService.register(this.registerForm.value).subscribe(res => {
-      alert("Signup Successful");
+      //alert("Signup Successful");
       this.router.navigate(['']);
-    }, err => {
-      alert("Something went wrong, try again")
     })
   }
 }

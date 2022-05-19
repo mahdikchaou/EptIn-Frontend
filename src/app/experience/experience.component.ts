@@ -81,11 +81,9 @@ export class ExperienceComponent {
   addExperience(){
     this.HttpClient.post<any>("http://localhost:9090/api/profile/experience", this.experiencef.value)
       .subscribe(res=>{
-        alert("Signup Successful");
+        //alert("Signup Successful");
         this.experiencef.reset();
         window.location.reload()
-      }, err=>{
-        alert("Something went wrong, try again")
       })
   }
 

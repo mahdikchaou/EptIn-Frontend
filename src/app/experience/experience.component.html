@@ -579,11 +579,12 @@
         <form cForm class="row g-3">
           <c-col [md]="6">
             <label cLabel for="Type d'emploi">Employment Type:</label>
-            <select cSelect id="Type d'emploi" cBgColor="white" disabled>
+            <input cFormControl id="inputCity" cBgColor="white" disabled value={{experience.employmentType}} />
+            <!--<select cSelect id="Type d'emploi" cBgColor="white" disabled>
               <option>{{experience.employmentType}}</option>
               <option value="Permanent">Permanent</option>
               <option value="Contractuel">Contract</option>
-            </select>
+            </select>-->
           </c-col>
           <c-col [md]="6">
             <label cLabel for="jobTitle">Job Title:</label>

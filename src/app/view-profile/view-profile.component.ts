@@ -24,7 +24,7 @@ export class ViewProfileComponent implements OnInit {
   message:string="";
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message=>this.message=message);
-    alert(this.message)
+    //alert(this.message)
     this.viewProfileService.getInformationsGenerales(this.message).subscribe(data1 => {
       this.informationsGenerales = data1;
     });
